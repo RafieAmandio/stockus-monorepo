@@ -62,11 +62,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Video & Media
 
-- [ ] **VID-01**: System integrates with VdoCipher for DRM-protected video hosting
-- [ ] **VID-02**: Videos are accessible only to authenticated members
-- [ ] **VID-03**: Videos display dynamic watermark with member email
-- [ ] **VID-04**: Admin can upload and manage session recordings
-- [ ] **VID-05**: Member can watch videos within course pages
+- [ ] **VID-01**: System stores videos on Cloudflare R2 (S3-compatible storage)
+- [ ] **VID-02**: Videos are accessible only to authenticated members (time-limited signed URLs)
+- [ ] **VID-03**: Admin can upload and manage session recordings
+- [ ] **VID-04**: Member can watch videos within course pages
 
 ### Public Pages
 
@@ -139,13 +138,63 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (To be populated by roadmapper) | | |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 2 | Pending |
+| CONT-04 | Phase 2 | Pending |
+| CONT-05 | Phase 2 | Pending |
+| CONT-06 | Phase 2 | Pending |
+| COHO-01 | Phase 2 | Pending |
+| COHO-02 | Phase 2 | Pending |
+| COHO-03 | Phase 2 | Pending |
+| PAY-01 | Phase 3 | Pending |
+| PAY-02 | Phase 3 | Pending |
+| PAY-03 | Phase 3 | Pending |
+| PAY-04 | Phase 3 | Pending |
+| PAY-05 | Phase 3 | Pending |
+| PAY-06 | Phase 3 | Pending |
+| PAY-07 | Phase 3 | Pending |
+| REF-01 | Phase 3 | Pending |
+| REF-02 | Phase 3 | Pending |
+| REF-03 | Phase 3 | Pending |
+| REF-04 | Phase 3 | Pending |
+| REF-05 | Phase 3 | Pending |
+| VID-01 | Phase 4 | Pending |
+| VID-02 | Phase 4 | Pending |
+| VID-03 | Phase 4 | Pending |
+| VID-04 | Phase 4 | Pending |
+| MEMB-01 | Phase 5 | Pending |
+| MEMB-02 | Phase 5 | Pending |
+| MEMB-03 | Phase 5 | Pending |
+| MEMB-04 | Phase 5 | Pending |
+| MEMB-05 | Phase 5 | Pending |
+| MEMB-06 | Phase 5 | Pending |
+| MEMB-07 | Phase 5 | Pending |
+| COHO-04 | Phase 5 | Pending |
+| COHO-05 | Phase 5 | Pending |
+| PAGE-01 | Phase 5 | Pending |
+| PAGE-02 | Phase 5 | Pending |
+| PAGE-03 | Phase 5 | Pending |
+| PAGE-04 | Phase 5 | Pending |
+| PAGE-05 | Phase 5 | Pending |
+| PAGE-06 | Phase 5 | Pending |
+| PAGE-07 | Phase 5 | Pending |
+| ADMN-01 | Phase 6 | Pending |
+| ADMN-02 | Phase 6 | Pending |
+| ADMN-03 | Phase 6 | Pending |
+| ADMN-04 | Phase 6 | Pending |
+| ADMN-05 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 46 total
-- Mapped to phases: 0
-- Unmapped: 46 (pending roadmap creation)
+- v1 requirements: 45 total
+- Mapped to phases: 45
+- Unmapped: 0 (100% coverage)
 
 ---
 *Requirements defined: 2025-01-25*
-*Last updated: 2025-01-25 after initial definition*
+*Last updated: 2025-01-25 after roadmap creation*
