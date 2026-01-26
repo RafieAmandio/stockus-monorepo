@@ -60,6 +60,9 @@ Recent decisions affecting current work:
 - Split health endpoints — /health (liveness) and /health/ready (readiness) for production patterns (01-02)
 - Explicit schema files in drizzle.config.ts — Avoids ESM/CJS conflicts with barrel imports (01-02)
 
+**From 02-01:**
+- tsx runner for drizzle-kit — Resolves ESM/CJS conflict for migration generation (02-01)
+
 **From 02-02:**
 - Result objects over exceptions — Email service returns { success, messageId?, error? } instead of throwing (02-02)
 - Node.js crypto only for tokens — No external deps for token generation/hashing (02-02)
