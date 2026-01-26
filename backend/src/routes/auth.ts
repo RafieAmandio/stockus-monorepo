@@ -458,3 +458,31 @@ auth.post('/reset-password', zValidator('json', resetPasswordSchema), async (c) 
 
   return c.json({ message: 'Password reset successful. Please log in with your new password.' })
 })
+
+/**
+ * GET /auth/validate-reset-token
+ * Validate password reset token (for frontend to check before showing form)
+ */
+auth.get('/validate-reset-token', async (c) => {
+  const token = c.req.query('token')
+
+  if (!token) {
+    return c.json({ valid: false, error: 'Token required' }, 400)
+  }
+
+  const tokenHash = hashToken(token)
+
+  const tokenRecord = await db.query.tokens.findFirst({
+    where: and(
+      eq(tokens.tokenHash, tokenHash),
+      eq(tokens.type, 'password_reset'),
+      gt(tokens.expiresAt, new Date())
+    ),
+  })
+
+  if (!tokenRecord) {
+    return c.json({ valid: false, error: 'Invalid or expired token' })
+  }
+
+  return c.json({ valid: true })
+})
