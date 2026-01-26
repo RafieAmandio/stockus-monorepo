@@ -96,6 +96,11 @@ Recent decisions affecting current work:
 - UUID filenames for uploads - saveFile uses UUIDs to prevent path traversal and collisions (03-02)
 - Validation returns result objects - validateFile returns { valid, error? } consistent with 02-02 pattern (03-02)
 
+**From 03-05:**
+- Files remain on disk after soft delete - Physical cleanup is v2 concern, simplifies v1 while preserving audit trail (03-05)
+- Template downloads tier-gated - Free users only access isFreePreview templates, members access all (03-05)
+- Image routes admin-only - All image endpoints require admin auth, not publicly accessible (03-05)
+
 ### Pending Todos
 
 None yet.
