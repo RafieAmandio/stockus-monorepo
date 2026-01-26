@@ -10,28 +10,29 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 ## Current Position
 
 Phase: 1 of 9 (Backend Foundation)
-Plan: 1 completed in current phase
+Plan: 2 completed in current phase
 Status: In progress
-Last activity: 2025-01-26 — Completed 01-01-PLAN.md (Backend initialization)
+Last activity: 2026-01-26 — Completed 01-02-PLAN.md (Hono app and schema)
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 2 min
-- Total execution time: 0.03 hours
+- Total plans completed: 2
+- Average duration: 3 min
+- Total execution time: 0.10 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-backend-foundation | 1 | 2 min | 2 min |
+| 01-backend-foundation | 2 | 6 min | 3 min |
 
 **Recent Trend:**
-- Last completed: 01-01 (2 min)
-- Trend: First plan baseline established
+- Last completed: 01-02 (4 min)
+- Previous: 01-01 (2 min)
+- Trend: Consistent velocity, increasing scope per plan
 
 *Updated after each plan completion*
 
@@ -53,6 +54,11 @@ Recent decisions affecting current work:
 - Connection pool limits — 20 max connections, 30s idle timeout (01-01)
 - Fail-fast validation — Environment validated at startup with Zod (01-01)
 
+**From 01-02:**
+- Modular route mounting with app.route() — Preserves TypeScript inference (01-02)
+- Split health endpoints — /health (liveness) and /health/ready (readiness) for production patterns (01-02)
+- Explicit schema files in drizzle.config.ts — Avoids ESM/CJS conflicts with barrel imports (01-02)
+
 ### Pending Todos
 
 None yet.
@@ -68,9 +74,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2025-01-26 06:07 (plan execution)
-Stopped at: Completed 01-01-PLAN.md, ready for 01-02
+Last session: 2026-01-26 07:14 (plan execution)
+Stopped at: Completed 01-02-PLAN.md, ready for 01-03
 Resume file: None
 
 ---
-*Last updated: 2025-01-26*
+*Last updated: 2026-01-26*
