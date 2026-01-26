@@ -5,6 +5,7 @@ import { researchRoutes } from './research.js'
 import { courseRoutes } from './courses.js'
 import { templateRoutes } from './templates.js'
 import { imageRoutes } from './images.js'
+import { cohortRoutes } from './cohorts.js'
 
 const routes = new Hono()
 
@@ -25,5 +26,8 @@ routes.route('/templates', templateRoutes)
 
 // Image routes
 routes.route('/images', imageRoutes)
+
+// Cohort routes
+routes.route('/cohorts', cohortRoutes)
 
 export default routes
