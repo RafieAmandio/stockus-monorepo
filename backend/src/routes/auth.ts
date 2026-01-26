@@ -268,3 +268,84 @@ auth.get('/me', authMiddleware, async (c) => {
 
   return c.json({ user })
 })
+
+/**
+ * GET /auth/verify-email
+ * Verify email using token from email link
+ */
+auth.get('/verify-email', async (c) => {
+  const token = c.req.query('token')
+
+  if (!token) {
+    return c.json({ error: 'Verification token required' }, 400)
+  }
+
+  const tokenHash = hashToken(token)
+
+  // Find valid token
+  const tokenRecord = await db.query.tokens.findFirst({
+    where: and(
+      eq(tokens.tokenHash, tokenHash),
+      eq(tokens.type, 'email_verification'),
+      gt(tokens.expiresAt, new Date())
+    ),
+  })
+
+  if (!tokenRecord) {
+    return c.json({ error: 'Invalid or expired verification token' }, 400)
+  }
+
+  // Update user and delete token in transaction
+  await db.transaction(async (tx) => {
+    await tx.update(users)
+      .set({ isVerified: true })
+      .where(eq(users.id, tokenRecord.userId))
+
+    await tx.delete(tokens).where(eq(tokens.id, tokenRecord.id))
+  })
+
+  return c.json({ message: 'Email verified successfully. You can now log in.' })
+})
+
+/**
+ * POST /auth/resend-verification
+ * Resend verification email for unverified user
+ */
+auth.post('/resend-verification', zValidator('json', z.object({
+  email: z.string().email(),
+})), async (c) => {
+  const { email } = c.req.valid('json')
+
+  // Find unverified user
+  const user = await db.query.users.findFirst({
+    where: eq(users.email, email.toLowerCase()),
+  })
+
+  // Always return success to prevent enumeration
+  if (user && !user.isVerified) {
+    // Delete any existing verification tokens
+    await db.delete(tokens).where(
+      and(
+        eq(tokens.userId, user.id),
+        eq(tokens.type, 'email_verification')
+      )
+    )
+
+    // Generate new token
+    const verificationToken = generateToken()
+    const tokenHash = hashToken(verificationToken)
+
+    await db.insert(tokens).values({
+      userId: user.id,
+      type: 'email_verification',
+      tokenHash,
+      expiresAt: hoursFromNow(24),
+    })
+
+    sendVerificationEmail(user.email, verificationToken, user.name).catch(err => {
+      console.error('Failed to send verification email:', err)
+    })
+  }
+
+  return c.json({ message: 'If your account exists and is unverified, a new verification email has been sent.' })
+})
