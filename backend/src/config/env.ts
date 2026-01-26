@@ -27,6 +27,14 @@ const envSchema = z.object({
   // URLs
   FRONTEND_URL: z.string().url(),
   BACKEND_URL: z.string().url(),
+
+  // Midtrans Payment Gateway
+  MIDTRANS_SERVER_KEY: z.string().min(10, 'MIDTRANS_SERVER_KEY is required'),
+  MIDTRANS_CLIENT_KEY: z.string().min(10, 'MIDTRANS_CLIENT_KEY is required'),
+  MIDTRANS_IS_PRODUCTION: z.string().default('false').transform((val) => val === 'true'),
+
+  // Referral System
+  REFERRAL_REWARD_AMOUNT: z.string().default('50000').transform(Number), // IDR 50,000 default
 });
 
 export type Env = z.infer<typeof envSchema>;
