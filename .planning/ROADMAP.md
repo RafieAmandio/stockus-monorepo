@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Backend Foundation** - Hono API setup with PostgreSQL, Drizzle ORM, and project structure
 - [x] **Phase 2: Authentication System** - User registration, login, JWT sessions, email verification, password reset
-- [ ] **Phase 3: Content API** - Courses, research reports, templates, cohorts CRUD endpoints
+- [x] **Phase 3: Content API** - Courses, research reports, templates, cohorts CRUD endpoints
 - [ ] **Phase 4: Payment Integration** - Midtrans subscriptions, workshops, promo codes, referral system
 - [ ] **Phase 5: Video & Storage** - Cloudflare R2 integration, signed URLs for video access
 - [ ] **Phase 6: Frontend - Public Pages** - Next.js setup, landing, about, pricing, research preview pages
@@ -75,12 +75,12 @@ Plans:
   5. Content endpoints respect user tier for access control
 **Plans:** 6 plans
 Plans:
-- [ ] 03-01-PLAN.md — Database schemas (courses, research, templates, cohorts, admins) and requireAdmin middleware
-- [ ] 03-02-PLAN.md — Utility functions (slug generation, file upload handling)
-- [ ] 03-03-PLAN.md — Course CRUD routes with sessions
-- [ ] 03-04-PLAN.md — Research report CRUD routes
-- [ ] 03-05-PLAN.md — Template CRUD routes with file upload/download
-- [ ] 03-06-PLAN.md — Cohort CRUD routes with sessions and Zoom links
+- [x] 03-01-PLAN.md — Database schemas (courses, research, templates, cohorts, admins) and requireAdmin middleware
+- [x] 03-02-PLAN.md — Utility functions (slug generation, file upload handling)
+- [x] 03-03-PLAN.md — Course CRUD routes with sessions
+- [x] 03-04-PLAN.md — Research report CRUD routes
+- [x] 03-05-PLAN.md — Template CRUD routes with file upload/download
+- [x] 03-06-PLAN.md — Cohort CRUD routes with sessions and Zoom links
 
 ### Phase 4: Payment Integration
 **Goal**: Users can purchase subscriptions and workshops via Midtrans
@@ -164,7 +164,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 |-------|--------|-----------|
 | 1. Backend Foundation | ✓ Complete | 2026-01-26 |
 | 2. Authentication System | ✓ Complete | 2026-01-26 |
-| 3. Content API | Not started | - |
+| 3. Content API | ✓ Complete | 2026-01-26 |
 | 4. Payment Integration | Not started | - |
 | 5. Video & Storage | Not started | - |
 | 6. Frontend - Public Pages | Not started | - |
@@ -174,4 +174,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 3 planned (6 plans in 2 waves)*
+*Last updated: 2026-01-26 — Phase 3 complete (6 plans, all verified)*

@@ -17,12 +17,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Content Management
 
-- [ ] **CONT-01**: Admin can create/edit/publish courses with metadata (title, description, thumbnail)
-- [ ] **CONT-02**: Admin can create/edit/publish research reports with publication dates
-- [ ] **CONT-03**: Admin can upload downloadable templates (PDF, Excel files)
-- [ ] **CONT-04**: Admin can use rich text editor for content creation
-- [ ] **CONT-05**: Admin can manage media library (images)
-- [ ] **CONT-06**: Content can be marked as free preview or members-only
+- [x] **CONT-01**: Admin can create/edit/publish courses with metadata (title, description, thumbnail)
+- [x] **CONT-02**: Admin can create/edit/publish research reports with publication dates
+- [x] **CONT-03**: Admin can upload downloadable templates (PDF, Excel files)
+- [x] **CONT-04**: Admin can use rich text editor for content creation
+- [x] **CONT-05**: Admin can manage media library (images)
+- [x] **CONT-06**: Content can be marked as free preview or members-only
 
 ### Payment & Subscription
 
@@ -54,9 +54,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Cohort Management
 
-- [ ] **COHO-01**: Admin can create cohorts with start/end dates
-- [ ] **COHO-02**: Admin can manage enrollment windows (open/close)
-- [ ] **COHO-03**: Admin can add sessions to cohorts with dates and Zoom links
+- [x] **COHO-01**: Admin can create cohorts with start/end dates
+- [x] **COHO-02**: Admin can manage enrollment windows (open/close)
+- [x] **COHO-03**: Admin can add sessions to cohorts with dates and Zoom links
 - [ ] **COHO-04**: Member can enroll in available cohorts
 - [ ] **COHO-05**: Member can view upcoming session schedule
 
@@ -143,15 +143,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-03 | Phase 2 | Complete |
 | AUTH-04 | Phase 2 | Complete |
 | AUTH-05 | Phase 2 | Complete |
-| CONT-01 | Phase 2 | Pending |
-| CONT-02 | Phase 2 | Pending |
-| CONT-03 | Phase 2 | Pending |
-| CONT-04 | Phase 2 | Pending |
-| CONT-05 | Phase 2 | Pending |
-| CONT-06 | Phase 2 | Pending |
-| COHO-01 | Phase 2 | Pending |
-| COHO-02 | Phase 2 | Pending |
-| COHO-03 | Phase 2 | Pending |
+| CONT-01 | Phase 3 | Complete |
+| CONT-02 | Phase 3 | Complete |
+| CONT-03 | Phase 3 | Complete |
+| CONT-04 | Phase 3 | Complete |
+| CONT-05 | Phase 3 | Complete |
+| CONT-06 | Phase 3 | Complete |
+| COHO-01 | Phase 3 | Complete |
+| COHO-02 | Phase 3 | Complete |
+| COHO-03 | Phase 3 | Complete |
 | PAY-01 | Phase 3 | Pending |
 | PAY-02 | Phase 3 | Pending |
 | PAY-03 | Phase 3 | Pending |
@@ -197,4 +197,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 2 complete (AUTH-01 through AUTH-05)*
+*Last updated: 2026-01-26 — Phase 3 complete (CONT-01 through CONT-06, COHO-01 through COHO-03)*
