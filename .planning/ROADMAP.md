@@ -2,7 +2,13 @@
 
 ## Overview
 
-StockUs launches as a complete investment education platform for Indonesian investors. The roadmap progresses from backend foundation through content infrastructure, payment integration with referral rewards, DRM-protected video delivery, member-facing frontend, and finally admin panel customization and deployment. Each phase delivers a complete, verifiable capability that unblocks the next.
+StockUs launches as a complete investment education platform for Indonesian investors. The roadmap progresses from backend API foundation through authentication, content management, payments, frontend, and finally Docker deployment. Each phase delivers a complete, verifiable capability that unblocks the next.
+
+**Architecture:**
+- Backend: Hono API server (Node.js/Bun)
+- Frontend: Next.js (React)
+- Database: PostgreSQL + Drizzle ORM
+- Deploy: Docker Compose
 
 ## Phases
 
@@ -12,157 +18,144 @@ StockUs launches as a complete investment education platform for Indonesian inve
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Authentication** - Backend setup with PayloadCMS, user authentication, and role-based access control
-- [ ] **Phase 2: Content Management System** - Collections for courses, research reports, templates, and cohort scheduling
-- [ ] **Phase 3: Payment & Referral System** - Midtrans integration with subscription payments, workshops, promo codes, and referral rewards
-- [ ] **Phase 4: Video Infrastructure** - Cloudflare R2 video storage with signed URL access control
-- [ ] **Phase 5: Member Dashboard & Frontend** - Next.js frontend with course catalog, member dashboard, research library, and public pages
-- [ ] **Phase 6: Admin Panel Customization** - PayloadCMS admin enhancements for content managers and member management
-- [ ] **Phase 7: Deployment & DevOps** - Production deployment with separate backend/frontend/admin, CI/CD pipeline
+- [ ] **Phase 1: Backend Foundation** - Hono API setup with PostgreSQL, Drizzle ORM, and project structure
+- [ ] **Phase 2: Authentication System** - User registration, login, JWT sessions, email verification, password reset
+- [ ] **Phase 3: Content API** - Courses, research reports, templates, cohorts CRUD endpoints
+- [ ] **Phase 4: Payment Integration** - Midtrans subscriptions, workshops, promo codes, referral system
+- [ ] **Phase 5: Video & Storage** - Cloudflare R2 integration, signed URLs for video access
+- [ ] **Phase 6: Frontend - Public Pages** - Next.js setup, landing, about, pricing, research preview pages
+- [ ] **Phase 7: Frontend - Member Area** - Dashboard, course player, downloads, profile management
+- [ ] **Phase 8: Admin Dashboard** - Content management UI, user management, order history
+- [ ] **Phase 9: Docker & Deployment** - Docker Compose setup, production configuration, CI/CD
 
 ## Phase Details
 
-### Phase 1: Foundation & Authentication
-**Goal**: Users can create accounts with tiered access levels on a secure backend
+### Phase 1: Backend Foundation
+**Goal**: Hono API server running with PostgreSQL connection and base project structure
 **Depends on**: Nothing (first phase)
+**Requirements**: None (infrastructure)
+**Success Criteria** (what must be TRUE):
+  1. Hono server starts and responds to health check endpoint
+  2. PostgreSQL connection established via Drizzle ORM
+  3. Database migrations run successfully
+  4. Project structure supports modular route organization
+  5. Environment configuration loads from .env
+**Plans**: TBD
+
+### Phase 2: Authentication System
+**Goal**: Users can register, login, verify email, and reset password with JWT sessions
+**Depends on**: Phase 1 (requires API server and database)
 **Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05
 **Success Criteria** (what must be TRUE):
   1. User can sign up with email and password
   2. User receives email verification after signup
   3. User can reset forgotten password via email link
-  4. User session persists across browser refresh without re-login
+  4. JWT token issued on login, validated on protected routes
   5. System correctly distinguishes between anonymous, free, and member tiers
 **Plans**: TBD
 
-Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
-
-### Phase 2: Content Management System
-**Goal**: Admin can create and manage all educational content through PayloadCMS
-**Depends on**: Phase 1 (requires authentication and access control)
+### Phase 3: Content API
+**Goal**: CRUD endpoints for all content types (courses, research, templates, cohorts)
+**Depends on**: Phase 2 (requires authentication for admin routes)
 **Requirements**: CONT-01, CONT-02, CONT-03, CONT-04, CONT-05, CONT-06, COHO-01, COHO-02, COHO-03
 **Success Criteria** (what must be TRUE):
-  1. Admin can create courses with titles, descriptions, thumbnails, and member-only flags
-  2. Admin can publish research reports with dates and access controls
-  3. Admin can upload downloadable templates (PDF, Excel) to media library
-  4. Admin can create cohorts with start/end dates and manage enrollment windows
-  5. Admin can add session schedules to cohorts with Zoom links
+  1. API supports CRUD for courses with sessions
+  2. API supports CRUD for research reports
+  3. API supports file uploads for templates
+  4. API supports cohort creation with schedules
+  5. Content endpoints respect user tier for access control
 **Plans**: TBD
 
-Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
-
-### Phase 3: Payment & Referral System
-**Goal**: Users can purchase subscriptions and workshops, apply promo codes, and earn referral rewards
-**Depends on**: Phase 1 (requires user accounts to attach payments)
-**Requirements**: PAY-01, PAY-02, PAY-03, PAY-04, PAY-05, PAY-06, PAY-07, REF-01, REF-02, REF-03, REF-04, REF-05
+### Phase 4: Payment Integration
+**Goal**: Users can purchase subscriptions and workshops via Midtrans
+**Depends on**: Phase 2 (requires user accounts)
+**Requirements**: PAY-01 through PAY-07, REF-01 through REF-05
 **Success Criteria** (what must be TRUE):
-  1. User can purchase annual subscription via Midtrans with Indonesian payment methods (Virtual Account, GoPay, cards)
-  2. User can purchase one-time workshops through same payment flow
-  3. User can apply promo codes during checkout for discounts
-  4. New user can apply referral code during signup or checkout
-  5. Referrer receives reward when their code is used on successful payment
-  6. Member can view their unique referral code and referral stats (uses, rewards earned)
-  7. Admin can configure referral reward amounts and types
-  8. Webhook automatically updates subscription status after payment confirmation
+  1. User can initiate subscription payment via Midtrans
+  2. Webhook updates user tier after successful payment
+  3. User can purchase one-time workshops
+  4. Promo codes apply discounts at checkout
+  5. Referral system tracks codes and rewards
 **Plans**: TBD
 
-Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
-- [ ] 03-03: TBD
-- [ ] 03-04: TBD
-
-### Phase 4: Video Infrastructure
-**Goal**: Course videos are stored securely and accessible only to authenticated members
-**Depends on**: Phase 3 (video access gated by subscription status)
+### Phase 5: Video & Storage
+**Goal**: Secure video storage with member-only access via signed URLs
+**Depends on**: Phase 4 (video access gated by subscription)
 **Requirements**: VID-01, VID-02, VID-03, VID-04
 **Success Criteria** (what must be TRUE):
-  1. Videos are stored on Cloudflare R2 (S3-compatible storage)
-  2. Only authenticated members with active subscriptions can access videos via time-limited signed URLs
-  3. Admin can upload session recordings through PayloadCMS admin panel
-  4. Member can watch videos embedded within course pages
+  1. Videos upload to Cloudflare R2
+  2. Signed URLs generated for authenticated members only
+  3. URLs expire after configurable time
+  4. Video metadata stored in database
 **Plans**: TBD
 
-Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
-
-### Phase 5: Member Dashboard & Frontend
-**Goal**: Members and visitors experience complete Next.js frontend with courses, research, and community features
-**Depends on**: Phase 2 (content), Phase 3 (payments), Phase 4 (videos)
-**Requirements**: MEMB-01, MEMB-02, MEMB-03, MEMB-04, MEMB-05, MEMB-06, MEMB-07, COHO-04, COHO-05, PAGE-01, PAGE-02, PAGE-03, PAGE-04, PAGE-05, PAGE-06, PAGE-07
+### Phase 6: Frontend - Public Pages
+**Goal**: Next.js frontend with all public-facing pages
+**Depends on**: Phase 3 (needs content API)
+**Requirements**: PAGE-01, PAGE-02, PAGE-03, PAGE-04, PAGE-05, PAGE-06, PAGE-07
 **Success Criteria** (what must be TRUE):
-  1. Visitor can view landing page with hero, course showcase, community features, testimonials, FAQ
-  2. Visitor can view About Us, Community, Pricing, and Research preview pages
-  3. Member can access dashboard showing enrolled courses, download history, and upcoming sessions
-  4. Member can enroll in available cohorts and view session schedule with Zoom links
-  5. Member can track course progress through completed sessions
-  6. Member can download completion certificate after finishing course
-  7. Member can access full research reports and download all templates
-  8. Free user can access preview content only (limited videos, some reports)
-  9. All pages are mobile responsive with proper SEO meta tags
+  1. Landing page with hero, courses, testimonials, FAQ
+  2. About Us page with team profiles
+  3. Community page showing Discord integration
+  4. Pricing page with subscription options
+  5. Research preview page (limited access)
+  6. Mobile responsive, SEO optimized
 **Plans**: TBD
 
-Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
-- [ ] 05-03: TBD
-- [ ] 05-04: TBD
-- [ ] 05-05: TBD
+### Phase 7: Frontend - Member Area
+**Goal**: Authenticated member experience with dashboard and course access
+**Depends on**: Phase 5 (needs video), Phase 6 (needs base frontend)
+**Requirements**: MEMB-01 through MEMB-07, COHO-04, COHO-05
+**Success Criteria** (what must be TRUE):
+  1. Member dashboard shows enrolled courses, progress
+  2. Course player with video and materials
+  3. Research library with full access
+  4. Template downloads
+  5. Cohort enrollment and schedule view
+  6. Profile management
+**Plans**: TBD
 
-### Phase 6: Admin Panel Customization
-**Goal**: Content managers have streamlined PayloadCMS admin experience for managing platform
-**Depends on**: Phase 2 (content structure), Phase 4 (video workflow)
+### Phase 8: Admin Dashboard
+**Goal**: Admin interface for content and user management
+**Depends on**: Phase 3 (needs content API), Phase 4 (needs payment data)
 **Requirements**: ADMN-01, ADMN-02, ADMN-03, ADMN-04, ADMN-05
 **Success Criteria** (what must be TRUE):
-  1. Admin panel displays dashboard with key metrics (active members, total revenue, course enrollments)
-  2. Admin can manage all content types (courses, reports, templates, videos) in one interface
-  3. Admin can view and edit user accounts, including subscription status and tier changes
-  4. Admin can view order history with payment status and transaction details
-  5. Admin panel is accessible as separate deployment from public frontend
+  1. Admin can manage courses, reports, templates
+  2. Admin can view/edit users and subscriptions
+  3. Admin can view orders and payment history
+  4. Dashboard shows key metrics
 **Plans**: TBD
 
-Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
-
-### Phase 7: Deployment & DevOps
-**Goal**: Production application deployed with separate backend/frontend/admin and automated CI/CD
-**Depends on**: Phase 6 (all features complete)
-**Requirements**: None (infrastructure phase, no functional requirements)
+### Phase 9: Docker & Deployment
+**Goal**: Production-ready Docker Compose deployment
+**Depends on**: Phase 8 (all features complete)
+**Requirements**: None (infrastructure)
 **Success Criteria** (what must be TRUE):
-  1. Backend API and Admin Panel deployed as separate service with CORS configured for frontend
-  2. Next.js frontend deployed as separate service connecting to backend API
-  3. PostgreSQL database deployed with migration workflow for production updates
-  4. CI/CD pipeline automatically tests and deploys changes on merge to main branch
-  5. Environment variables properly configured across all deployments
-  6. Health check endpoints return status for monitoring
+  1. docker-compose.yml orchestrates all services
+  2. Backend, frontend, PostgreSQL containers configured
+  3. Environment variables managed via .env
+  4. Health checks configured
+  5. Nginx or Traefik for routing (optional)
+  6. Production build optimizations applied
 **Plans**: TBD
-
-Plans:
-- [ ] 07-01: TBD
-- [ ] 07-02: TBD
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Foundation & Authentication | 0/3 | Not started | - |
-| 2. Content Management System | 0/3 | Not started | - |
-| 3. Payment & Referral System | 0/4 | Not started | - |
-| 4. Video Infrastructure | 0/2 | Not started | - |
-| 5. Member Dashboard & Frontend | 0/5 | Not started | - |
-| 6. Admin Panel Customization | 0/2 | Not started | - |
-| 7. Deployment & DevOps | 0/2 | Not started | - |
+| Phase | Status | Completed |
+|-------|--------|-----------|
+| 1. Backend Foundation | Not started | - |
+| 2. Authentication System | Not started | - |
+| 3. Content API | Not started | - |
+| 4. Payment Integration | Not started | - |
+| 5. Video & Storage | Not started | - |
+| 6. Frontend - Public Pages | Not started | - |
+| 7. Frontend - Member Area | Not started | - |
+| 8. Admin Dashboard | Not started | - |
+| 9. Docker & Deployment | Not started | - |
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2025-01-25*
+*Last updated: 2025-01-26 — Changed to Hono + Next.js + Docker Compose*

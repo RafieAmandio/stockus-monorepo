@@ -59,12 +59,12 @@ Indonesian investors can learn structured approaches to global equity investing 
 
 **Payment context:** Indonesian market requires Midtrans for local payment methods (Virtual Account, e-wallets like GoPay/OVO/Dana, credit cards).
 
-**Design assets:** Hi-fi designs ready for all public pages and member dashboard. Admin panel design will be standard PayloadCMS admin UI.
+**Design assets:** Hi-fi designs ready for all public pages and member dashboard. Admin panel will be a custom React dashboard.
 
 ## Constraints
 
-- **Tech stack**: PayloadCMS (backend), React (frontend), Midtrans (payments) — specified by client
-- **Architecture**: Backend, Frontend, and Admin Panel must be separate deployable applications
+- **Tech stack**: Hono (backend API), Next.js (frontend), PostgreSQL (database), Midtrans (payments)
+- **Architecture**: Backend API and Frontend as separate services, deployed via Docker Compose
 - **Timeline**: Original target was 3 weeks (Dec 24 - Jan 14) — project scope may need adjustment
 - **Budget**: IDR 8,000,000 allocated
 - **Payment region**: Indonesian payment methods only via Midtrans
@@ -74,9 +74,11 @@ Indonesian investors can learn structured approaches to global equity investing 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| PayloadCMS for backend | Client specified, good headless CMS for this use case | — Pending |
+| Hono for backend API | Lightweight, fast, TypeScript-native, runs on Node/Bun/Edge | — Pending |
+| Next.js for frontend | SSR/SSG, React ecosystem, good DX | — Pending |
+| PostgreSQL + Drizzle ORM | Type-safe queries, good migration tooling | — Pending |
+| Docker Compose for deploy | Simple multi-service orchestration, easy local dev | — Pending |
 | Midtrans for payments | Required for Indonesian payment methods | — Pending |
-| Separate BE/FE/Admin | Client requirement for deployment flexibility | — Pending |
 | Manual stock data entry | Avoids external API complexity and costs | — Pending |
 | Cohort-based courses only | Matches existing business model, simpler than self-paced | — Pending |
 | Annual subscription model | Primary revenue, includes core course access | — Pending |
