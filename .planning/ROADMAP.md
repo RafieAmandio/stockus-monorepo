@@ -55,7 +55,13 @@ Plans:
   3. User can reset forgotten password via email link
   4. JWT token issued on login, validated on protected routes
   5. System correctly distinguishes between anonymous, free, and member tiers
-**Plans**: TBD
+**Plans:** 5 plans
+Plans:
+- [ ] 02-01-PLAN.md — Database schema (tokens, sessions, tier column)
+- [ ] 02-02-PLAN.md — Foundation services (env config, token service, email service)
+- [ ] 02-03-PLAN.md — Auth infrastructure (auth service, middleware)
+- [ ] 02-04-PLAN.md — Auth routes (signup, login, logout, refresh)
+- [ ] 02-05-PLAN.md — Verification flows (email verification, password reset)
 
 ### Phase 3: Content API
 **Goal**: CRUD endpoints for all content types (courses, research, templates, cohorts)
@@ -150,7 +156,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Status | Completed |
 |-------|--------|-----------|
 | 1. Backend Foundation | ✓ Complete | 2026-01-26 |
-| 2. Authentication System | Not started | - |
+| 2. Authentication System | Planned | - |
 | 3. Content API | Not started | - |
 | 4. Payment Integration | Not started | - |
 | 5. Video & Storage | Not started | - |
