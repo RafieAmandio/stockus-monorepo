@@ -73,7 +73,14 @@ Plans:
   3. API supports file uploads for templates
   4. API supports cohort creation with schedules
   5. Content endpoints respect user tier for access control
-**Plans**: TBD
+**Plans:** 6 plans
+Plans:
+- [ ] 03-01-PLAN.md — Database schemas (courses, research, templates, cohorts, admins) and requireAdmin middleware
+- [ ] 03-02-PLAN.md — Utility functions (slug generation, file upload handling)
+- [ ] 03-03-PLAN.md — Course CRUD routes with sessions
+- [ ] 03-04-PLAN.md — Research report CRUD routes
+- [ ] 03-05-PLAN.md — Template CRUD routes with file upload/download
+- [ ] 03-06-PLAN.md — Cohort CRUD routes with sessions and Zoom links
 
 ### Phase 4: Payment Integration
 **Goal**: Users can purchase subscriptions and workshops via Midtrans
@@ -167,4 +174,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 2 complete (verified)*
+*Last updated: 2026-01-26 — Phase 3 planned (6 plans in 2 waves)*
