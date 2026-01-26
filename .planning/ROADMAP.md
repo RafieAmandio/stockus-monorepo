@@ -92,7 +92,14 @@ Plans:
   3. User can purchase one-time workshops
   4. Promo codes apply discounts at checkout
   5. Referral system tracks codes and rewards
-**Plans**: TBD
+**Plans:** 6 plans
+Plans:
+- [ ] 04-01-PLAN.md — Payment database schemas (payments, subscriptions, promo codes, referrals)
+- [ ] 04-02-PLAN.md — Payment service with Midtrans Snap integration
+- [ ] 04-03-PLAN.md — Promo code and referral services
+- [ ] 04-04-PLAN.md — Payment initiation routes (subscription, workshop)
+- [ ] 04-05-PLAN.md — Midtrans webhook handler with signature verification
+- [ ] 04-06-PLAN.md — Referral routes (view stats, validate codes)
 
 ### Phase 5: Video & Storage
 **Goal**: Secure video storage with member-only access via signed URLs
@@ -174,4 +181,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 3 complete (6 plans, all verified)*
+*Last updated: 2026-01-26 — Phase 4 planned (6 plans in 2 waves)*
