@@ -7,6 +7,12 @@ export default defineConfig({
     './src/db/schema/users.ts',
     './src/db/schema/tokens.ts',
     './src/db/schema/sessions.ts',
+    './src/db/schema/admins.ts',
+    './src/db/schema/courses.ts',
+    './src/db/schema/research.ts',
+    './src/db/schema/templates.ts',
+    './src/db/schema/images.ts',
+    './src/db/schema/cohorts.ts',
   ],
   dialect: 'postgresql',
   dbCredentials: {
