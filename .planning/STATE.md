@@ -106,6 +106,11 @@ Recent decisions affecting current work:
 - Template downloads tier-gated - Free users only access isFreePreview templates, members access all (03-05)
 - Image routes admin-only - All image endpoints require admin auth, not publicly accessible (03-05)
 
+**From 04-01:**
+- generatedAlwaysAsIdentity for primary keys - Modern PostgreSQL pattern prevents accidental explicit ID inserts (04-01)
+- Cohorts serve as workshops - No separate workshops table, cohorts with price are purchasable (04-01)
+- Raw webhook response stored - Full Midtrans JSON stored for debugging/audit (04-01)
+
 **From 04-02:**
 - Snap token-based integration - Frontend-initiated payment with Midtrans modal (04-02)
 - Order ID format sub-{userId}-{timestamp}-{nanoid} - Unique IDs with embedded user context for webhook processing (04-02)
