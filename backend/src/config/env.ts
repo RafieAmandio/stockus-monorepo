@@ -14,6 +14,19 @@ const envSchema = z.object({
     }),
   DATABASE_URL: z.string().url().startsWith('postgresql://'),
   LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).default('info'),
+
+  // Authentication
+  JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters'),
+  JWT_ACCESS_EXPIRES_MINUTES: z.string().default('15').transform(Number),
+  JWT_REFRESH_EXPIRES_DAYS: z.string().default('7').transform(Number),
+
+  // Email (Resend)
+  RESEND_API_KEY: z.string().startsWith('re_'),
+  EMAIL_FROM: z.string().email(),
+
+  // URLs
+  FRONTEND_URL: z.string().url(),
+  BACKEND_URL: z.string().url(),
 });
 
 export type Env = z.infer<typeof envSchema>;
