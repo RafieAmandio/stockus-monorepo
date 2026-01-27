@@ -6,6 +6,7 @@ import { courseRoutes } from './courses.js'
 import { templateRoutes } from './templates.js'
 import { imageRoutes } from './images.js'
 import { cohortRoutes } from './cohorts.js'
+import { referralRoutes } from './referrals.js'
 
 const routes = new Hono()
 
@@ -29,5 +30,8 @@ routes.route('/images', imageRoutes)
 
 // Cohort routes
 routes.route('/cohorts', cohortRoutes)
+
+// Referral routes
+routes.route('/referrals', referralRoutes)
 
 export default routes
