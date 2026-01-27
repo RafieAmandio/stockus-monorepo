@@ -21,8 +21,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Backend Foundation** - Hono API setup with PostgreSQL, Drizzle ORM, and project structure
 - [x] **Phase 2: Authentication System** - User registration, login, JWT sessions, email verification, password reset
 - [x] **Phase 3: Content API** - Courses, research reports, templates, cohorts CRUD endpoints
-- [ ] **Phase 4: Payment Integration** - Midtrans subscriptions, workshops, promo codes, referral system
-- [ ] **Phase 5: Video & Storage** - Cloudflare R2 integration, signed URLs for video access
+- [x] **Phase 4: Payment Integration** - Midtrans subscriptions, workshops, promo codes, referral system
+- [x] **Phase 5: Video & Storage** - Cloudflare R2 integration, signed URLs for video access
 - [ ] **Phase 6: Frontend - Public Pages** - Next.js setup, landing, about, pricing, research preview pages
 - [ ] **Phase 7: Frontend - Member Area** - Dashboard, course player, downloads, profile management
 - [ ] **Phase 8: Admin Dashboard** - Content management UI, user management, order history
@@ -94,12 +94,12 @@ Plans:
   5. Referral system tracks codes and rewards
 **Plans:** 6 plans
 Plans:
-- [ ] 04-01-PLAN.md — Payment database schemas (payments, subscriptions, promo codes, referrals)
-- [ ] 04-02-PLAN.md — Payment service with Midtrans Snap integration
-- [ ] 04-03-PLAN.md — Promo code and referral services
-- [ ] 04-04-PLAN.md — Payment initiation routes (subscription, workshop)
-- [ ] 04-05-PLAN.md — Midtrans webhook handler with signature verification
-- [ ] 04-06-PLAN.md — Referral routes (view stats, validate codes)
+- [x] 04-01-PLAN.md — Payment database schemas (payments, subscriptions, promo codes, referrals)
+- [x] 04-02-PLAN.md — Payment service with Midtrans Snap integration
+- [x] 04-03-PLAN.md — Promo code and referral services
+- [x] 04-04-PLAN.md — Payment initiation routes (subscription, workshop)
+- [x] 04-05-PLAN.md — Midtrans webhook handler with signature verification
+- [x] 04-06-PLAN.md — Referral routes (view stats, validate codes)
 
 ### Phase 5: Video & Storage
 **Goal**: Secure video storage with member-only access via signed URLs
@@ -110,7 +110,10 @@ Plans:
   2. Signed URLs generated for authenticated members only
   3. URLs expire after configurable time
   4. Video metadata stored in database
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [x] 05-01-PLAN.md — R2 client setup, environment config, videos database schema
+- [x] 05-02-PLAN.md — Video routes (admin upload, member playback with presigned URLs)
 
 ### Phase 6: Frontend - Public Pages
 **Goal**: Next.js frontend with all public-facing pages
@@ -172,8 +175,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | 1. Backend Foundation | ✓ Complete | 2026-01-26 |
 | 2. Authentication System | ✓ Complete | 2026-01-26 |
 | 3. Content API | ✓ Complete | 2026-01-26 |
-| 4. Payment Integration | Not started | - |
-| 5. Video & Storage | Not started | - |
+| 4. Payment Integration | ✓ Complete | 2026-01-27 |
+| 5. Video & Storage | ✓ Complete | 2026-01-27 |
 | 6. Frontend - Public Pages | Not started | - |
 | 7. Frontend - Member Area | Not started | - |
 | 8. Admin Dashboard | Not started | - |
@@ -181,4 +184,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 4 planned (6 plans in 2 waves)*
+*Last updated: 2026-01-27 — Phase 5 complete (2 plans, 4/4 must-haves verified)*

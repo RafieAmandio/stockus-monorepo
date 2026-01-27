@@ -26,21 +26,21 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Payment & Subscription
 
-- [ ] **PAY-01**: User can purchase annual subscription via Midtrans
-- [ ] **PAY-02**: User can purchase one-time workshops via Midtrans
-- [ ] **PAY-03**: User receives email receipt after successful payment
-- [ ] **PAY-04**: User can apply promo codes for discounts
-- [ ] **PAY-05**: System supports Indonesian payment methods (Virtual Account, GoPay, credit cards)
-- [ ] **PAY-06**: Webhook handles Midtrans payment confirmations
-- [ ] **PAY-07**: User subscription status updates automatically after payment
+- [x] **PAY-01**: User can purchase annual subscription via Midtrans
+- [x] **PAY-02**: User can purchase one-time workshops via Midtrans
+- [x] **PAY-03**: User receives email receipt after successful payment
+- [x] **PAY-04**: User can apply promo codes for discounts
+- [x] **PAY-05**: System supports Indonesian payment methods (Virtual Account, GoPay, credit cards)
+- [x] **PAY-06**: Webhook handles Midtrans payment confirmations
+- [x] **PAY-07**: User subscription status updates automatically after payment
 
 ### Referral System
 
-- [ ] **REF-01**: Each member has a unique referral promo code
-- [ ] **REF-02**: New users can apply referral code during signup/checkout
-- [ ] **REF-03**: Referrer receives reward when their code is used on successful payment
-- [ ] **REF-04**: Admin can configure referral reward amount/type
-- [ ] **REF-05**: Member can view their referral stats (uses, rewards earned)
+- [x] **REF-01**: Each member has a unique referral promo code
+- [x] **REF-02**: New users can apply referral code during signup/checkout
+- [x] **REF-03**: Referrer receives reward when their code is used on successful payment
+- [x] **REF-04**: Admin can configure referral reward amount/type
+- [x] **REF-05**: Member can view their referral stats (uses, rewards earned)
 
 ### Member Experience
 
@@ -62,10 +62,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Video & Media
 
-- [ ] **VID-01**: System stores videos on Cloudflare R2 (S3-compatible storage)
-- [ ] **VID-02**: Videos are accessible only to authenticated members (time-limited signed URLs)
-- [ ] **VID-03**: Admin can upload and manage session recordings
-- [ ] **VID-04**: Member can watch videos within course pages
+- [x] **VID-01**: System stores videos on Cloudflare R2 (S3-compatible storage)
+- [x] **VID-02**: Videos are accessible only to authenticated members (time-limited signed URLs)
+- [x] **VID-03**: Admin can upload and manage session recordings
+- [x] **VID-04**: Member can watch videos within course pages
 
 ### Public Pages
 
@@ -152,22 +152,22 @@ Which phases cover which requirements. Updated during roadmap creation.
 | COHO-01 | Phase 3 | Complete |
 | COHO-02 | Phase 3 | Complete |
 | COHO-03 | Phase 3 | Complete |
-| PAY-01 | Phase 3 | Pending |
-| PAY-02 | Phase 3 | Pending |
-| PAY-03 | Phase 3 | Pending |
-| PAY-04 | Phase 3 | Pending |
-| PAY-05 | Phase 3 | Pending |
-| PAY-06 | Phase 3 | Pending |
-| PAY-07 | Phase 3 | Pending |
-| REF-01 | Phase 3 | Pending |
-| REF-02 | Phase 3 | Pending |
-| REF-03 | Phase 3 | Pending |
-| REF-04 | Phase 3 | Pending |
-| REF-05 | Phase 3 | Pending |
-| VID-01 | Phase 4 | Pending |
-| VID-02 | Phase 4 | Pending |
-| VID-03 | Phase 4 | Pending |
-| VID-04 | Phase 4 | Pending |
+| PAY-01 | Phase 4 | Complete |
+| PAY-02 | Phase 4 | Complete |
+| PAY-03 | Phase 4 | Complete |
+| PAY-04 | Phase 4 | Complete |
+| PAY-05 | Phase 4 | Complete |
+| PAY-06 | Phase 4 | Complete |
+| PAY-07 | Phase 4 | Complete |
+| REF-01 | Phase 4 | Complete |
+| REF-02 | Phase 4 | Complete |
+| REF-03 | Phase 4 | Complete |
+| REF-04 | Phase 4 | Complete |
+| REF-05 | Phase 4 | Complete |
+| VID-01 | Phase 5 | Complete |
+| VID-02 | Phase 5 | Complete |
+| VID-03 | Phase 5 | Complete |
+| VID-04 | Phase 5 | Complete |
 | MEMB-01 | Phase 5 | Pending |
 | MEMB-02 | Phase 5 | Pending |
 | MEMB-03 | Phase 5 | Pending |
@@ -197,4 +197,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-01-25*
-*Last updated: 2026-01-26 — Phase 3 complete (CONT-01 through CONT-06, COHO-01 through COHO-03)*
+*Last updated: 2026-01-27 — Phase 5 complete (VID-01 through VID-04)*
