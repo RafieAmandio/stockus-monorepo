@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2025-01-26)
 
 **Core value:** Indonesian investors can learn structured approaches to global equity investing through cohort-based courses, research, templates, and a professional community.
-**Current focus:** Phase 4 - Payment Integration
+**Current focus:** Phase 5 - Video & Storage
 
 ## Current Position
 
-Phase: 4 of 9 (Payment Integration)
-Plan: 6 of 6 in current phase
+Phase: 5 of 9 (Video & Storage)
+Plan: 1 of 2 in current phase
 Status: In progress
-Last activity: 2026-01-27 - Completed 04-06-PLAN.md
+Last activity: 2026-01-27 — Completed 05-01-PLAN.md (R2 Infrastructure)
 
-Progress: [████████░░] 89%
+Progress: [████████░░] 47%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 19
+- Total plans completed: 20
 - Average duration: 2.0 min
-- Total execution time: 0.65 hours
+- Total execution time: 0.70 hours
 
 **By Phase:**
 
@@ -31,11 +31,12 @@ Progress: [████████░░] 89%
 | 02-authentication-system | 5 | 10 min | 2 min |
 | 03-content-api | 6 | 11.5 min | 1.9 min |
 | 04-payment-integration | 6 | 11 min | 1.8 min |
+| 05-video-storage | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last completed: 04-04 (3 min)
+- Last completed: 05-01 (3 min)
 - Previous: 04-06 (1 min)
-- Trend: Phase 4 complete, strong velocity maintained
+- Trend: Phase 5 started, R2 infrastructure ready
 
 *Updated after each plan completion*
 
@@ -137,6 +138,12 @@ Recent decisions affecting current work:
 - Auto-generate on access pattern - Referral codes created on first access for legacy members (04-06)
 - Self-referral prevention - Validation endpoint checks ownership and rejects own codes (04-06)
 
+**From 05-01:**
+- R2 region 'auto' - Cloudflare handles region routing automatically (05-01)
+- 15-min upload URL expiry - Balance between security and UX (05-01)
+- 1-hour playback URL expiry - Reasonable session length (05-01)
+- AWS SDK v3 pattern - S3Client + Commands + getSignedUrl for presigned URLs (05-01)
+
 ### Pending Todos
 
 None yet.
@@ -152,9 +159,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2027-01-27 (plan execution)
-Stopped at: Completed 04-04-PLAN.md (Phase 4 complete)
+Last session: 2026-01-27 (plan execution)
+Stopped at: Completed 05-01-PLAN.md
 Resume file: None
 
 ---
-*Last updated: 2027-01-27*
+*Last updated: 2026-01-27*
