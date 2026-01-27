@@ -12,16 +12,16 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 Phase: 6 of 9 (Frontend Public Pages)
 Plan: 4 of 5 in current phase
 Status: In progress
-Last activity: 2026-01-27 — Completed 06-04-PLAN.md (Pricing & Research Preview)
+Last activity: 2026-01-27 — Completed 06-03-PLAN.md (About & Community Pages)
 
-Progress: [█████████░] 53%
+Progress: [█████████░] 54%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 23
+- Total plans completed: 25
 - Average duration: 2.1 min
-- Total execution time: 0.87 hours
+- Total execution time: 0.92 hours
 
 **By Phase:**
 
@@ -32,12 +32,12 @@ Progress: [█████████░] 53%
 | 03-content-api | 6 | 11.5 min | 1.9 min |
 | 04-payment-integration | 6 | 11 min | 1.8 min |
 | 05-video-storage | 2 | 5 min | 2.5 min |
-| 06-frontend-public-pages | 2 | 7.7 min | 3.9 min |
+| 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
 
 **Recent Trend:**
-- Last completed: 06-04 (2.7 min)
-- Previous: 06-01 (5 min)
-- Trend: Phase 6 progressing, pricing and research pages complete
+- Last completed: 06-03 (3 min)
+- Previous: 06-04 (2.7 min)
+- Trend: Phase 6 progressing, about and community pages complete
 
 *Updated after each plan completion*
 
@@ -157,6 +157,11 @@ Recent decisions affecting current work:
 - Indonesian locale (id_ID) - Target audience is Indonesian investors (06-01)
 - Sticky header with backdrop blur - Always accessible navigation, modern aesthetic (06-01)
 
+**From 06-03:**
+- Person JSON-LD for team members - Used @graph array for multiple Person entities, improves SEO (06-03)
+- Two-tier community model - Free (public Discord) vs Premium (members-only channels) (06-03)
+- Avatar placeholder pattern - Initials in colored circles, easy to replace with real photos later (06-03)
+
 **From 06-04:**
 - Product JSON-LD with aggregate rating - Rich search results for pricing page (06-04)
 - 5-minute cache revalidation - Balances research page freshness and performance (06-04)
@@ -178,7 +183,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-27 (plan execution)
-Stopped at: Completed 06-04-PLAN.md (Pricing & Research Preview)
+Stopped at: Completed 06-03-PLAN.md (About & Community Pages)
 Resume file: None
 
 ---
