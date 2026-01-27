@@ -19,9 +19,9 @@ Progress: [████████░░] 89%
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 17
+- Total plans completed: 19
 - Average duration: 2.0 min
-- Total execution time: 0.57 hours
+- Total execution time: 0.65 hours
 
 **By Phase:**
 
@@ -30,12 +30,12 @@ Progress: [████████░░] 89%
 | 01-backend-foundation | 2 | 6 min | 3 min |
 | 02-authentication-system | 5 | 10 min | 2 min |
 | 03-content-api | 6 | 11.5 min | 1.9 min |
-| 04-payment-integration | 4 | 8 min | 2.0 min |
+| 04-payment-integration | 6 | 11 min | 1.8 min |
 
 **Recent Trend:**
-- Last completed: 04-06 (1 min)
-- Previous: 04-03 (3 min 6 sec)
-- Trend: Strong velocity maintained
+- Last completed: 04-04 (3 min)
+- Previous: 04-06 (1 min)
+- Trend: Phase 4 complete, strong velocity maintained
 
 *Updated after each plan completion*
 
@@ -122,6 +122,11 @@ Recent decisions affecting current work:
 - Atomic counter increments - SQL template literals prevent race conditions (04-03)
 - Transaction for referral rewards - Ensures consistency between usage record and stats (04-03)
 
+**From 04-04:**
+- Subscription price constant in routes - IDR 2,500,000 hardcoded for v1 simplicity (04-04)
+- Pending record before token - Payment record created before Snap token return for audit trail (04-04)
+- Own referral code rejection at route level - Prevents self-referral in payment flow (04-04)
+
 **From 04-05:**
 - Idempotency via midtrans_transaction_id - Prevents duplicate webhook processing (04-05)
 - Settlement or capture+accept triggers success - Covers bank transfer and card payments (04-05)
@@ -147,9 +152,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-27 (plan execution)
-Stopped at: Completed 04-06-PLAN.md
+Last session: 2027-01-27 (plan execution)
+Stopped at: Completed 04-04-PLAN.md (Phase 4 complete)
 Resume file: None
 
 ---
-*Last updated: 2026-01-27*
+*Last updated: 2027-01-27*
