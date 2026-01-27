@@ -18,7 +18,7 @@ const features = [
     icon: Users,
     title: 'Vibrant Community',
     description:
-      'Connect with fellow Indonesian investors, share insights, and learn from each other's experiences in a supportive environment.',
+      'Connect with fellow Indonesian investors, share insights, and learn from each other\'s experiences in a supportive environment.',
   },
   {
     icon: TrendingUp,

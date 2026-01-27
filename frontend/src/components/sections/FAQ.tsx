@@ -11,7 +11,7 @@ import { MEMBERSHIP_PRICE_FORMATTED } from '@/lib/constants'
 const faqs = [
   {
     question: 'What is included in the membership?',
-    answer: `Access to all courses, research reports, investment templates, and community features. You'll also receive priority access to workshops and cohort programs.`,
+    answer: `Access to all courses, research reports, investment templates, and community features. You\'ll also receive priority access to workshops and cohort programs.`,
   },
   {
     question: 'How much does membership cost?',
@@ -35,7 +35,7 @@ const faqs = [
   {
     question: 'Is there a refund policy?',
     answer:
-      'We offer a 14-day money-back guarantee. If you're not satisfied with the platform within the first 14 days of membership, contact us for a full refund.',
+      'We offer a 14-day money-back guarantee. If you\'re not satisfied with the platform within the first 14 days of membership, contact us for a full refund.',
   },
 ]
 

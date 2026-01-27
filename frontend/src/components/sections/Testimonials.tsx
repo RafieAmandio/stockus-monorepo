@@ -13,7 +13,7 @@ const testimonials = [
     name: 'Sarah Wijaya',
     role: 'Independent Investor',
     quote:
-      'StockUs research reports are thorough and actionable. The templates save me hours every week. Best investment education platform I've used.',
+      'StockUs research reports are thorough and actionable. The templates save me hours every week. Best investment education platform I\'ve used.',
     avatar: '/avatars/sarah.jpg',
   },
   {
@@ -34,7 +34,7 @@ export function Testimonials() {
             Trusted by Indonesian Investors
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Join hundreds of members who've elevated their investing skills with
+            Join hundreds of members who have elevated their investing skills with
             StockUs.
           </p>
         </div>

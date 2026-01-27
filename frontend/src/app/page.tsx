@@ -1,8 +1,58 @@
-export default function HomePage() {
+import { Hero } from '@/components/sections/Hero'
+import { CoursesShowcase } from '@/components/sections/CoursesShowcase'
+import { CommunityFeatures } from '@/components/sections/CommunityFeatures'
+import { Testimonials } from '@/components/sections/Testimonials'
+import { FAQ } from '@/components/sections/FAQ'
+import { fetchAPI } from '@/lib/api'
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants'
+import type { Course } from '@/types'
+
+async function getCourses(): Promise<Course[]> {
+  try {
+    const data = await fetchAPI<{ courses: Course[] }>('/courses', {
+      revalidate: 300, // Cache for 5 minutes
+    })
+    return data.courses
+  } catch (error) {
+    console.error('Failed to fetch courses:', error)
+    return []
+  }
+}
+
+export default async function HomePage() {
+  const courses = await getCourses()
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
+    sameAs: [
+      'https://twitter.com/stockus_id',
+      'https://linkedin.com/company/stockus',
+      'https://instagram.com/stockus_id',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      email: 'hello@stockus.id',
+      availableLanguage: ['Indonesian', 'English'],
+    },
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">StockUs</h1>
-      <p className="mt-4 text-lg text-slate-600">Coming soon...</p>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <Hero />
+      <CoursesShowcase courses={courses} />
+      <CommunityFeatures />
+      <Testimonials />
+      <FAQ />
+    </>
   )
 }
