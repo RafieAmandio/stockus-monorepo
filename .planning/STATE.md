@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 
 ## Current Position
 
-Phase: 5 of 9 (Video & Storage) - COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-27 — Completed 05-02-PLAN.md (Video API Routes)
+Phase: 6 of 9 (Frontend Public Pages)
+Plan: 1 of 5 in current phase
+Status: In progress
+Last activity: 2026-01-27 — Completed 06-01-PLAN.md (Next.js Foundation & Layout)
 
-Progress: [█████████░] 50%
+Progress: [█████████░] 51%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 21
-- Average duration: 2.0 min
-- Total execution time: 0.73 hours
+- Total plans completed: 22
+- Average duration: 2.1 min
+- Total execution time: 0.82 hours
 
 **By Phase:**
 
@@ -32,11 +32,12 @@ Progress: [█████████░] 50%
 | 03-content-api | 6 | 11.5 min | 1.9 min |
 | 04-payment-integration | 6 | 11 min | 1.8 min |
 | 05-video-storage | 2 | 5 min | 2.5 min |
+| 06-frontend-public-pages | 1 | 5 min | 5 min |
 
 **Recent Trend:**
-- Last completed: 05-02 (2 min)
-- Previous: 05-01 (3 min)
-- Trend: Phase 5 complete, video storage ready
+- Last completed: 06-01 (5 min)
+- Previous: 05-02 (2 min)
+- Trend: Phase 6 started, frontend foundation established
 
 *Updated after each plan completion*
 
@@ -149,6 +150,13 @@ Recent decisions affecting current work:
 - Member tier for playback - Any member can access any video, course-level access control is v2 (05-02)
 - Session linking pattern - confirm-upload updates courseSessions.videoUrl for automatic video discovery (05-02)
 
+**From 06-01:**
+- Next.js 15 with App Router - Server Components by default, improved performance, nested layouts (06-01)
+- shadcn/ui over pre-built library - Copy-paste components into codebase, full customization, no runtime overhead (06-01)
+- Inter font over Geist - Widely used, good readability, professional appearance (06-01)
+- Indonesian locale (id_ID) - Target audience is Indonesian investors (06-01)
+- Sticky header with backdrop blur - Always accessible navigation, modern aesthetic (06-01)
+
 ### Pending Todos
 
 None yet.
@@ -165,7 +173,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-27 (plan execution)
-Stopped at: Completed 05-02-PLAN.md (Phase 5 complete)
+Stopped at: Completed 06-01-PLAN.md (Next.js Foundation & Layout)
 Resume file: None
 
 ---
