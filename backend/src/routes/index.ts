@@ -10,6 +10,7 @@ import { referralRoutes } from './referrals.js'
 import { paymentRoutes } from './payments.js'
 import { webhookRoutes } from './webhooks.js'
 import { videoRoutes } from './videos.js'
+import { adminRoutes } from './admin.js'
 
 const routes = new Hono()
 
@@ -45,5 +46,8 @@ routes.route('/webhooks', webhookRoutes)
 
 // Video routes (admin upload, member playback)
 routes.route('/videos', videoRoutes)
+
+// Admin routes (metrics, users, orders)
+routes.route('/admin', adminRoutes)
 
 export default routes
