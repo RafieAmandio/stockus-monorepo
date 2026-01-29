@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { getUser } from '@/lib/auth/dal'
-import { fetchAPI } from '@/lib/api-client'
+import { fetchAPI } from '@/lib/api-client-server'
 import { redirect } from 'next/navigation'
 import { CourseCard } from '@/components/member/CourseCard'
 import { EmptyState } from '@/components/member/EmptyState'

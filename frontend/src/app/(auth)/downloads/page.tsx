@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { getUser } from '@/lib/auth/dal'
-import { fetchAPI } from '@/lib/api-client'
+import { fetchAPI } from '@/lib/api-client-server'
 import { redirect } from 'next/navigation'
 import { EmptyState } from '@/components/member/EmptyState'
 import { DownloadButton } from '@/components/member/DownloadButton'
