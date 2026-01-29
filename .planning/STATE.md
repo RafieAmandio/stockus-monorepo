@@ -250,6 +250,12 @@ Recent decisions affecting current work:
 - Tier change automatically manages subscription lifecycle - Changing to member creates 1-year subscription, changing to free cancels active subscription (08-07)
 - Admin-granted subscriptions have 1-year duration - Manual tier upgrade creates subscription with endDate set 1 year from now (08-07)
 - Payment history limited to 20 entries - User detail endpoint returns 20 most recent payments for performance and UI clarity (08-07)
+
+**From 08-03:**
+- Separate admin-server.ts from admin.ts - Server components need cookie forwarding, client components use credentials (08-03)
+- Split api-client into server/client files - Fixes Next.js import error when client components import server-only code (08-03)
+- IDR currency formatting - Uses Indonesian locale (id-ID) for revenue display matching target audience (08-03)
+
 ### Pending Todos
 
 None yet.
@@ -266,13 +272,8 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-30 (plan execution)
-Stopped at: Completed 08-07-PLAN.md (User Management)
+Stopped at: Completed 08-03-PLAN.md (Dashboard Metrics)
 Resume file: None
 
 ---
 *Last updated: 2026-01-30*
-
-**From 08-03:**
-- Separate admin-server.ts from admin.ts - Server components need cookie forwarding, client components use credentials (08-03)
-- Split api-client into server/client files - Fixes Next.js import error when client components import server-only code (08-03)
-- IDR currency formatting - Uses Indonesian locale (id-ID) for revenue display matching target audience (08-03)
