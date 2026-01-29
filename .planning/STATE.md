@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 ## Current Position
 
 Phase: 8 of 9 (Admin Dashboard)
-Plan: 6 of 9 in current phase
+Plan: 8 of 9 in current phase
 Status: In progress
-Last activity: 2026-01-30 — Completed 08-05-PLAN.md (Research Management)
+Last activity: 2026-01-30 — Completed 08-03-PLAN.md (Dashboard Metrics)
 
-Progress: [█████████░] 96%
+Progress: [█████████░] 91%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 40
+- Total plans completed: 41
 - Average duration: 2.3 min
-- Total execution time: 1.7 hours
+- Total execution time: 1.8 hours
 
 **By Phase:**
 
@@ -34,12 +34,12 @@ Progress: [█████████░] 96%
 | 05-video-storage | 2 | 5 min | 2.5 min |
 | 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
 | 07-frontend-member-area | 9 | 26.4 min | 2.9 min |
-| 08-admin-dashboard | 6 | 24.4 min | 4.1 min |
+| 08-admin-dashboard | 8 | 30.4 min | 3.8 min |
 
 **Recent Trend:**
-- Last completed: 08-05 (5.0 min)
-- Previous: 08-07 (5.3 min)
-- Trend: Phase 8 progressing, research management with optional stock analysis complete
+- Last completed: 08-03 (6.0 min)
+- Previous: 08-05 (5.0 min)
+- Trend: Phase 8 progressing, dashboard metrics with IDR formatting complete
 
 *Updated after each plan completion*
 
@@ -271,3 +271,8 @@ Resume file: None
 
 ---
 *Last updated: 2026-01-30*
+
+**From 08-03:**
+- Separate admin-server.ts from admin.ts - Server components need cookie forwarding, client components use credentials (08-03)
+- Split api-client into server/client files - Fixes Next.js import error when client components import server-only code (08-03)
+- IDR currency formatting - Uses Indonesian locale (id-ID) for revenue display matching target audience (08-03)
