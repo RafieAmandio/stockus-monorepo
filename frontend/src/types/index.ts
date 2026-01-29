@@ -8,6 +8,20 @@ export interface Course {
   createdAt: string
 }
 
+export interface CourseSession {
+  id: number
+  courseId: number
+  title: string
+  description: string | null
+  sessionOrder: number
+  videoUrl: string | null
+  createdAt: string
+}
+
+export interface CourseWithSessions extends Course {
+  sessions: CourseSession[]
+}
+
 export interface ResearchReport {
   id: number
   title: string
@@ -15,6 +29,23 @@ export interface ResearchReport {
   summary: string
   requiredTier: 'free' | 'member'
   publishedAt: string | null
+}
+
+export interface ResearchReportDetail extends ResearchReport {
+  content: string | null
+  stockSymbol: string | null
+  stockName: string | null
+  analystRating: string | null
+  targetPrice: number | null
+}
+
+export interface Template {
+  id: number
+  title: string
+  description: string | null
+  fileUrl: string
+  isFreePreview: boolean
+  createdAt: string
 }
 
 export interface Cohort {
@@ -26,6 +57,30 @@ export interface Cohort {
   price: number
   maxParticipants: number
   enrolledCount: number
+}
+
+export interface CohortSession {
+  id: number
+  cohortId: number
+  title: string
+  scheduledAt: string
+  zoomLink: string | null
+  recordingUrl: string | null
+  sessionOrder: number
+}
+
+export interface CohortWithSessions extends Omit<Cohort, 'title' | 'description'> {
+  name: string
+  courseId: number
+  status: 'upcoming' | 'open' | 'closed' | 'completed'
+  enrollmentOpenDate: string
+  enrollmentCloseDate: string
+  sessions: CohortSession[]
+  course?: {
+    id: number
+    title: string
+    slug: string
+  }
 }
 
 export interface TeamMember {
