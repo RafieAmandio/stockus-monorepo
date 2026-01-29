@@ -67,3 +67,52 @@ export async function deleteCourse(id: number) {
     method: 'DELETE',
   })
 }
+
+// Template types
+export interface Template {
+  id: number
+  title: string
+  slug: string
+  description: string | null
+  originalFilename: string
+  filename: string
+  filepath: string
+  fileSize: number
+  mimeType: string
+  isFreePreview: boolean
+  downloadCount: number
+  uploadedBy: number
+  createdAt: string
+  updatedAt: string
+  deletedAt: string | null
+}
+
+export async function getAdminTemplates() {
+  const data = await clientFetchAPI<{ templates: Template[] }>('/templates')
+  return data.templates
+}
+
+export async function getAdminTemplate(id: number) {
+  const data = await clientFetchAPI<{ template: Template }>(`/templates/${id}`)
+  return data.template
+}
+
+// Note: createTemplate uses FormData for file upload
+// This is handled separately in the client component
+
+export async function updateTemplate(
+  id: number,
+  data: { title?: string; description?: string; isFreePreview?: boolean }
+) {
+  return clientFetchAPI(`/templates/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+}
+
+export async function deleteTemplate(id: number) {
+  return clientFetchAPI(`/templates/${id}`, {
+    method: 'DELETE',
+  })
+}
