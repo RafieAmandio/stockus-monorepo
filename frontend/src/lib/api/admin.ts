@@ -116,3 +116,67 @@ export async function deleteTemplate(id: number) {
     method: 'DELETE',
   })
 }
+
+// Research types
+export interface Research {
+  id: number
+  title: string
+  slug: string
+  summary: string
+  content: string
+  thumbnailUrl: string | null
+  publishedAt: string | null
+  isFreePreview: boolean
+  status: string
+  // Stock-specific fields (nullable)
+  stockSymbol: string | null
+  stockName: string | null
+  analystRating: string | null // 'buy' | 'hold' | 'sell'
+  targetPrice: number | null
+  createdAt: string
+  updatedAt: string
+}
+
+export interface ResearchFormData {
+  title: string
+  summary?: string
+  content?: string
+  thumbnailUrl?: string | null
+  isFreePreview?: boolean
+  stockSymbol?: string | null
+  stockName?: string | null
+  analystRating?: string | null
+  targetPrice?: number | null
+}
+
+export async function getAdminResearch() {
+  const data = await clientFetchAPI<{ reports: Research[] }>('/research')
+  return data.reports
+}
+
+export async function getAdminResearchById(id: number) {
+  const data = await clientFetchAPI<{ report: Research }>(`/research/${id}`)
+  return data.report
+}
+
+export async function createResearch(data: ResearchFormData) {
+  return clientFetchAPI('/research', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+}
+
+export async function updateResearch(id: number, data: Partial<ResearchFormData>) {
+  return clientFetchAPI(`/research/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+}
+
+export async function deleteResearch(id: number) {
+  return clientFetchAPI(`/research/${id}`, {
+    method: 'DELETE',
+  })
+}
