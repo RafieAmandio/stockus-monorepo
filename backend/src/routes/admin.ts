@@ -1,5 +1,7 @@
 import { Hono } from 'hono'
-import { eq, count, sum, and, gte, sql } from 'drizzle-orm'
+import { eq, count, sum, and, gte, sql, desc } from 'drizzle-orm'
+import { zValidator } from '@hono/zod-validator'
+import { z } from 'zod'
 import { db } from '../db/index.js'
 import { users, payments, subscriptions } from '../db/schema/index.js'
 import { authMiddleware, requireAdmin } from '../middleware/auth.js'
@@ -163,8 +165,24 @@ adminRoutes.get('/orders', async (c) => {
       .limit(limit)
       .offset(offset)
 
+    // Transform to nested user object structure
+    const orders = orderList.map(order => ({
+      id: order.id,
+      midtransOrderId: order.midtransOrderId,
+      type: order.type,
+      status: order.status,
+      amount: order.amount,
+      paymentMethod: order.paymentMethod,
+      createdAt: order.createdAt,
+      paidAt: order.paidAt,
+      user: {
+        name: order.userName,
+        email: order.userEmail,
+      },
+    }))
+
     return c.json({
-      orders: orderList,
+      orders,
       total,
       page,
       limit,
@@ -173,4 +191,115 @@ adminRoutes.get('/orders', async (c) => {
     console.error('Error fetching orders:', error)
     return c.json({ error: 'Failed to fetch orders' }, 500)
   }
+})
+
+/**
+ * GET /admin/users/:id
+ * Get user details with subscription and payment history
+ */
+adminRoutes.get('/users/:id', async (c) => {
+  const userId = parseInt(c.req.param('id'))
+
+  // Get user
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  })
+
+  if (!user) {
+    return c.json({ error: 'User not found' }, 404)
+  }
+
+  // Get active subscription if exists
+  const subscription = await db.query.subscriptions.findFirst({
+    where: and(
+      eq(subscriptions.userId, userId),
+      eq(subscriptions.status, 'active')
+    ),
+  })
+
+  // Get payment history
+  const userPayments = await db.query.payments.findMany({
+    where: eq(payments.userId, userId),
+    orderBy: desc(payments.createdAt),
+    limit: 20,
+  })
+
+  // Remove sensitive fields
+  const { passwordHash, ...safeUser } = user
+
+  return c.json({
+    user: safeUser,
+    subscription,
+    payments: userPayments,
+  })
+})
+
+/**
+ * PATCH /admin/users/:id
+ * Update user tier
+ */
+adminRoutes.patch('/users/:id', zValidator('json', z.object({
+  tier: z.enum(['free', 'member']).optional(),
+  name: z.string().min(1).max(255).optional(),
+})), async (c) => {
+  const userId = parseInt(c.req.param('id'))
+  const body = c.req.valid('json')
+
+  // Check user exists
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  })
+
+  if (!user) {
+    return c.json({ error: 'User not found' }, 404)
+  }
+
+  // Update user
+  const [updatedUser] = await db.update(users)
+    .set({
+      ...body,
+      updatedAt: new Date(),
+    })
+    .where(eq(users.id, userId))
+    .returning()
+
+  // If tier changed to 'member' and no active subscription, create one
+  // If tier changed to 'free', cancel any active subscription
+  if (body.tier === 'member') {
+    const existingSub = await db.query.subscriptions.findFirst({
+      where: and(
+        eq(subscriptions.userId, userId),
+        eq(subscriptions.status, 'active')
+      ),
+    })
+
+    if (!existingSub) {
+      // Create manual subscription (admin grant)
+      const startDate = new Date()
+      const endDate = new Date()
+      endDate.setFullYear(endDate.getFullYear() + 1) // 1 year
+
+      await db.insert(subscriptions).values({
+        userId,
+        status: 'active',
+        startDate,
+        endDate,
+      })
+    }
+  } else if (body.tier === 'free') {
+    // Cancel active subscription
+    await db.update(subscriptions)
+      .set({
+        status: 'cancelled',
+        updatedAt: new Date(),
+      })
+      .where(and(
+        eq(subscriptions.userId, userId),
+        eq(subscriptions.status, 'active')
+      ))
+  }
+
+  const { passwordHash, ...safeUser } = updatedUser
+
+  return c.json({ user: safeUser })
 })
