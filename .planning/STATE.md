@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 ## Current Position
 
 Phase: 8 of 9 (Admin Dashboard)
-Plan: 6 of 6 in current phase
+Plan: 8 of 8 in current phase
 Status: Phase 8 complete
-Last activity: 2026-01-30 — Completed 08-06-PLAN.md (Template Management)
+Last activity: 2026-01-29 — Completed 08-08-PLAN.md (Orders Management)
 
-Progress: [█████████░] 97%
+Progress: [█████████░] 99%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 37
+- Total plans completed: 38
 - Average duration: 2.3 min
-- Total execution time: 1.45 hours
+- Total execution time: 1.52 hours
 
 **By Phase:**
 
@@ -34,12 +34,12 @@ Progress: [█████████░] 97%
 | 05-video-storage | 2 | 5 min | 2.5 min |
 | 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
 | 07-frontend-member-area | 9 | 26.4 min | 2.9 min |
-| 08-admin-dashboard | 3 | 9.8 min | 3.3 min |
+| 08-admin-dashboard | 4 | 14.1 min | 3.5 min |
 
 **Recent Trend:**
-- Last completed: 08-06 (3.6 min)
-- Previous: 08-02 (3.6 min)
-- Trend: Phase 8 complete, template management with file upload finished
+- Last completed: 08-08 (4.3 min)
+- Previous: 08-06 (3.6 min)
+- Trend: Phase 8 complete, orders management with status filtering finished
 
 *Updated after each plan completion*
 
@@ -233,6 +233,12 @@ Recent decisions affecting current work:
 - Client-side file validation - Type and size checked before upload for better UX (08-06)
 - formatFileSize helper - Human-readable file sizes (KB/MB) for templates and uploads (08-06)
 
+**From 08-08:**
+- Backend nested user object structure - Admin orders endpoint transforms flat userName/userEmail to nested user object for consistent structure (08-08)
+- Status badge color mapping - settlement/capture=default, pending=secondary, deny/cancel/expire=destructive, refund=outline for visual status recognition (08-08)
+- IDR currency formatting - Intl.NumberFormat('id-ID') with currency: 'IDR' for Indonesian Rupiah display (08-08)
+- Filter reset pattern - setPage(1) when status filter changes to avoid pagination edge cases (08-08)
+
 ### Pending Todos
 
 None yet.
@@ -248,9 +254,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-30 (plan execution)
-Stopped at: Completed 08-06-PLAN.md (Template Management with File Upload)
+Last session: 2026-01-29 (plan execution)
+Stopped at: Completed 08-08-PLAN.md (Orders Management with Status Filtering)
 Resume file: None
 
 ---
-*Last updated: 2026-01-30*
+*Last updated: 2026-01-29*
