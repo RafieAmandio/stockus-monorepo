@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 ## Current Position
 
 Phase: 7 of 9 (Frontend Member Area)
-Plan: 1 of 10 in current phase
+Plan: 2 of 10 in current phase
 Status: In progress
-Last activity: 2026-01-29 — Completed 07-01-PLAN.md (Frontend Auth Infrastructure)
+Last activity: 2026-01-29 — Completed 07-02-PLAN.md (Login & Signup Pages)
 
-Progress: [███████░░░] 70%
+Progress: [███████░░░] 72%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 26
-- Average duration: 2.2 min
-- Total execution time: 0.99 hours
+- Total plans completed: 27
+- Average duration: 2.1 min
+- Total execution time: 1.01 hours
 
 **By Phase:**
 
@@ -33,12 +33,12 @@ Progress: [███████░░░] 70%
 | 04-payment-integration | 6 | 11 min | 1.8 min |
 | 05-video-storage | 2 | 5 min | 2.5 min |
 | 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
-| 07-frontend-member-area | 1 | 2.7 min | 2.7 min |
+| 07-frontend-member-area | 2 | 4.7 min | 2.4 min |
 
 **Recent Trend:**
-- Last completed: 07-01 (2.7 min)
-- Previous: 06-04 (2.7 min)
-- Trend: Phase 7 started, auth infrastructure complete
+- Last completed: 07-02 (2 min)
+- Previous: 07-01 (2.7 min)
+- Trend: Phase 7 progressing, login/signup pages complete
 
 *Updated after each plan completion*
 
@@ -173,6 +173,12 @@ Recent decisions affecting current work:
 - Data Access Layer pattern - React cache() wrapper ensures single verification per request lifecycle (07-01)
 - Defense-in-depth auth - Middleware for optimistic redirects, DAL for secure data access (07-01)
 - Cookie forwarding pattern - Server-side manually constructs Cookie header, client-side uses credentials: 'include' (07-01)
+
+**From 07-02:**
+- Suspense boundary for useSearchParams - LoginForm uses useSearchParams() which requires Suspense in Next.js 15 (07-02)
+- credentials: include pattern - All auth fetch calls include credentials for httpOnly cookies (07-02)
+- Success state in SignupForm - Shows email verification message after signup, prevents duplicate submissions (07-02)
+- Indonesian locale for auth forms - Masuk/Daftar text consistent with target audience (07-02)
 
 ### Pending Todos
 
