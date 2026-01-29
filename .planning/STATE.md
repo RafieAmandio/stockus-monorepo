@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2025-01-26)
 
 **Core value:** Indonesian investors can learn structured approaches to global equity investing through cohort-based courses, research, templates, and a professional community.
-**Current focus:** Phase 7 - Frontend Member Area (Phase 6 complete)
+**Current focus:** Phase 8 - Admin Dashboard (Phase 7 complete)
 
 ## Current Position
 
 Phase: 8 of 9 (Admin Dashboard)
-Plan: 1 of 6 in current phase
+Plan: 2 of 6 in current phase
 Status: In progress
-Last activity: 2026-01-29 — Completed 08-01-PLAN.md (Admin Panel Foundation)
+Last activity: 2026-01-30 — Completed 08-02-PLAN.md (Data Table Infrastructure)
 
-Progress: [█████████░] 93%
+Progress: [█████████░] 94%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 35
+- Total plans completed: 36
 - Average duration: 2.3 min
-- Total execution time: 1.33 hours
+- Total execution time: 1.39 hours
 
 **By Phase:**
 
@@ -34,12 +34,12 @@ Progress: [█████████░] 93%
 | 05-video-storage | 2 | 5 min | 2.5 min |
 | 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
 | 07-frontend-member-area | 9 | 26.4 min | 2.9 min |
-| 08-admin-dashboard | 1 | 2.6 min | 2.6 min |
+| 08-admin-dashboard | 2 | 6.2 min | 3.1 min |
 
 **Recent Trend:**
-- Last completed: 08-01 (2.6 min)
-- Previous: 07-05 (6.9 min)
-- Trend: Phase 8 started, admin foundation complete
+- Last completed: 08-02 (3.6 min)
+- Previous: 08-01 (2.6 min)
+- Trend: Phase 8 progressing, data table infrastructure complete
 
 *Updated after each plan completion*
 
@@ -221,6 +221,12 @@ Recent decisions affecting current work:
 - Admin badge destructive color - Uses destructive/10 background for visual distinction from member badge (08-01)
 - Admin route protection at layout level - requireAdmin in layout.tsx protects all admin pages, redirects non-admins to /dashboard (08-01)
 
+**From 08-02:**
+- TanStack Table for data tables - Headless library, full UI control, widely used, TypeScript-native (08-02)
+- React Hook Form + Zod for forms - Matches backend validation, excellent TypeScript support, performant (08-02)
+- Client-side table operations - V1 simplicity, admin content volume manageable, instant UX (08-02)
+- Generic DataTable component - DataTable<TData, TValue> with ColumnDef for reusability across all admin tables (08-02)
+
 ### Pending Todos
 
 None yet.
@@ -236,9 +242,9 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-29 (plan execution)
-Stopped at: Completed 08-01-PLAN.md (Admin Panel Foundation)
+Last session: 2026-01-30 (plan execution)
+Stopped at: Completed 08-02-PLAN.md (Data Table Infrastructure)
 Resume file: None
 
 ---
-*Last updated: 2026-01-29*
+*Last updated: 2026-01-30*
