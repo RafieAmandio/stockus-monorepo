@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2025-01-26)
 
 ## Current Position
 
-Phase: 7 of 9 (Frontend Member Area)
-Plan: 9 of 10 in current phase
+Phase: 8 of 9 (Admin Dashboard)
+Plan: 1 of 6 in current phase
 Status: In progress
-Last activity: 2026-01-29 — Completed 07-05-PLAN.md (Course Pages with Video Playback)
+Last activity: 2026-01-29 — Completed 08-01-PLAN.md (Admin Panel Foundation)
 
-Progress: [█████████░] 92%
+Progress: [█████████░] 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 34
+- Total plans completed: 35
 - Average duration: 2.3 min
-- Total execution time: 1.30 hours
+- Total execution time: 1.33 hours
 
 **By Phase:**
 
@@ -34,11 +34,12 @@ Progress: [█████████░] 92%
 | 05-video-storage | 2 | 5 min | 2.5 min |
 | 06-frontend-public-pages | 4 | 13.7 min | 3.4 min |
 | 07-frontend-member-area | 9 | 26.4 min | 2.9 min |
+| 08-admin-dashboard | 1 | 2.6 min | 2.6 min |
 
 **Recent Trend:**
-- Last completed: 07-05 (6.9 min)
-- Previous: 07-06 (3.7 min)
-- Trend: Phase 7 nearing completion, course pages with video playback and certificates complete
+- Last completed: 08-01 (2.6 min)
+- Previous: 07-05 (6.9 min)
+- Trend: Phase 8 started, admin foundation complete
 
 *Updated after each plan completion*
 
@@ -215,6 +216,11 @@ Recent decisions affecting current work:
 - Client component wrapper pattern - CoursePlayerClient wraps VideoPlayer for completion tracking (07-05)
 - Type assertion for dynamic ReactPlayer - Bypasses TypeScript issues with dynamic imports (07-05)
 
+**From 08-01:**
+- Admin auth check via endpoint probe - checkIsAdmin calls /admin/metrics to verify access instead of duplicating admin table query (08-01)
+- Admin badge destructive color - Uses destructive/10 background for visual distinction from member badge (08-01)
+- Admin route protection at layout level - requireAdmin in layout.tsx protects all admin pages, redirects non-admins to /dashboard (08-01)
+
 ### Pending Todos
 
 None yet.
@@ -231,7 +237,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-29 (plan execution)
-Stopped at: Completed 07-05-PLAN.md (Course Pages with Video Playback)
+Stopped at: Completed 08-01-PLAN.md (Admin Panel Foundation)
 Resume file: None
 
 ---
