@@ -126,7 +126,13 @@ Plans:
   4. Pricing page with subscription options
   5. Research preview page (limited access)
   6. Mobile responsive, SEO optimized
-**Plans**: TBD
+**Plans:** 5 plans
+Plans:
+- [ ] 06-01-PLAN.md — Next.js project setup, shadcn/ui, Header, Footer, mobile nav
+- [ ] 06-02-PLAN.md — Landing page with Hero, Courses, Community, Testimonials, FAQ
+- [ ] 06-03-PLAN.md — About Us and Community pages
+- [ ] 06-04-PLAN.md — Pricing and Research preview pages
+- [ ] 06-05-PLAN.md — Visual verification checkpoint
 
 ### Phase 7: Frontend - Member Area
 **Goal**: Authenticated member experience with dashboard and course access
@@ -139,7 +145,18 @@ Plans:
   4. Template downloads
   5. Cohort enrollment and schedule view
   6. Profile management
-**Plans**: TBD
+**Plans:** 10 plans
+Plans:
+- [ ] 07-01-PLAN.md — Auth infrastructure (DAL, middleware, API client)
+- [ ] 07-02-PLAN.md — Login and signup pages
+- [ ] 07-03-PLAN.md — Member layout with sidebar
+- [ ] 07-04-PLAN.md — Dashboard page with stats
+- [ ] 07-05-PLAN.md — Course list, detail, and player pages
+- [ ] 07-06-PLAN.md — Research library and detail pages
+- [ ] 07-07-PLAN.md — Downloads page with templates
+- [ ] 07-08-PLAN.md — Cohorts page with schedule
+- [ ] 07-09-PLAN.md — Profile management page
+- [ ] 07-10-PLAN.md — Visual verification checkpoint
 
 ### Phase 8: Admin Dashboard
 **Goal**: Admin interface for content and user management
@@ -177,11 +194,11 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | 3. Content API | ✓ Complete | 2026-01-26 |
 | 4. Payment Integration | ✓ Complete | 2026-01-27 |
 | 5. Video & Storage | ✓ Complete | 2026-01-27 |
-| 6. Frontend - Public Pages | Not started | - |
+| 6. Frontend - Public Pages | In Progress | - |
 | 7. Frontend - Member Area | Not started | - |
 | 8. Admin Dashboard | Not started | - |
 | 9. Docker & Deployment | Not started | - |
 
 ---
 *Roadmap created: 2025-01-25*
-*Last updated: 2026-01-27 — Phase 5 complete (2 plans, 4/4 must-haves verified)*
+*Last updated: 2026-01-27 — Phase 6 planned (5 plans in 3 waves)*
