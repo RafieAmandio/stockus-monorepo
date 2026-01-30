@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+npm-debug.log*
+.pnpm-debug.log*
+
+# Build output
+dist
+
+# Environment variables and secrets
+.env
+.env*.local
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+*.log
+README.md
+LICENSE
+
+# Database migrations (copied separately if needed)
+drizzle/*.sql
