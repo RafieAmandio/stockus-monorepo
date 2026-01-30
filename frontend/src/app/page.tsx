@@ -68,7 +68,6 @@ export default async function HomePage() {
       <WhosBehind />
       <JoinMembership />
       <FAQ />
-      <CoursesShowcase courses={courses} />
     </>
   )
 }
