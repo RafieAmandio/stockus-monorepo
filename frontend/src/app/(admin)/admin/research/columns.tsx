@@ -14,7 +14,7 @@ import Link from 'next/link'
 import { Research } from '@/lib/api/admin'
 
 interface ColumnsProps {
-  onDelete: (id: number) => void
+  onDelete: (id: string) => void
 }
 
 export function getColumns({ onDelete }: ColumnsProps): ColumnDef<Research>[] {

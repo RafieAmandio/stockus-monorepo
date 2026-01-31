@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   description: 'Download template investasi dan tools analisis.',
 }
 
-function getFileIcon(filename: string) {
+function getFileIcon(filename: string | null | undefined) {
+  if (!filename) return FileText
   const ext = filename.split('.').pop()?.toLowerCase()
   if (['xlsx', 'xls', 'csv'].includes(ext || '')) {
     return FileSpreadsheet
@@ -26,7 +27,8 @@ function getFileIcon(filename: string) {
   return FileText
 }
 
-function getFileExtension(url: string): string {
+function getFileExtension(url: string | null | undefined): string {
+  if (!url) return 'FILE'
   try {
     const urlPath = new URL(url, 'http://localhost').pathname
     const filename = urlPath.split('/').pop() || ''

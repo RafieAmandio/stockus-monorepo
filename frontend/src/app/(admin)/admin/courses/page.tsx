@@ -25,7 +25,7 @@ export default function CoursesPage() {
   const [courses, setCourses] = useState<Course[]>([])
   const [loading, setLoading] = useState(true)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
-  const [courseToDelete, setCourseToDelete] = useState<number | null>(null)
+  const [courseToDelete, setCourseToDelete] = useState<string | null>(null)
 
   useEffect(() => {
     loadCourses()
@@ -44,7 +44,7 @@ export default function CoursesPage() {
     }
   }
 
-  function handleDeleteClick(id: number) {
+  function handleDeleteClick(id: string) {
     setCourseToDelete(id)
     setDeleteDialogOpen(true)
   }

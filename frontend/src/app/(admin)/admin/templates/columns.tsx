@@ -22,8 +22,8 @@ function formatFileSize(bytes: number): string {
 }
 
 interface ColumnsProps {
-  onEdit: (id: number) => void
-  onDelete: (id: number) => void
+  onEdit: (id: string) => void
+  onDelete: (id: string) => void
 }
 
 export const createColumns = ({ onEdit, onDelete }: ColumnsProps): ColumnDef<Template>[] => [

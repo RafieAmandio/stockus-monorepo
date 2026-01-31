@@ -25,7 +25,7 @@ export default function ResearchPage() {
   const [reports, setReports] = useState<Research[]>([])
   const [loading, setLoading] = useState(true)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
-  const [reportToDelete, setReportToDelete] = useState<number | null>(null)
+  const [reportToDelete, setReportToDelete] = useState<string | null>(null)
 
   useEffect(() => {
     loadReports()
@@ -44,7 +44,7 @@ export default function ResearchPage() {
     }
   }
 
-  function handleDeleteClick(id: number) {
+  function handleDeleteClick(id: string) {
     setReportToDelete(id)
     setDeleteDialogOpen(true)
   }

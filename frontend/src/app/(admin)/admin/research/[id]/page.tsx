@@ -36,6 +36,7 @@ const researchSchema = z.object({
   summary: z.string(),
   content: z.string(),
   thumbnailUrl: z.string(),
+  fileUrl: z.string(),
   isFreePreview: z.boolean(),
   // Stock info section (all optional)
   stockSymbol: z.string(),
@@ -58,6 +59,7 @@ export default function EditResearchPage({ params }: { params: { id: string } })
       summary: '',
       content: '',
       thumbnailUrl: '',
+      fileUrl: '',
       isFreePreview: false,
       stockSymbol: '',
       stockName: '',
@@ -81,6 +83,7 @@ export default function EditResearchPage({ params }: { params: { id: string } })
         summary: report.summary || '',
         content: report.content || '',
         thumbnailUrl: report.thumbnailUrl || '',
+        fileUrl: report.fileUrl || '',
         isFreePreview: report.isFreePreview,
         stockSymbol: report.stockSymbol || '',
         stockName: report.stockName || '',
@@ -106,6 +109,7 @@ export default function EditResearchPage({ params }: { params: { id: string } })
         summary: data.summary || undefined,
         content: data.content || undefined,
         thumbnailUrl: data.thumbnailUrl || null,
+        fileUrl: data.fileUrl || null,
         isFreePreview: data.isFreePreview,
         stockSymbol: data.stockSymbol || null,
         stockName: data.stockName || null,
@@ -228,6 +232,27 @@ export default function EditResearchPage({ params }: { params: { id: string } })
                     </FormControl>
                     <FormDescription>
                       Optional thumbnail image URL
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="fileUrl"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>File URL (PDF)</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="url"
+                        placeholder="https://example.com/report.pdf"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      URL to downloadable PDF file
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

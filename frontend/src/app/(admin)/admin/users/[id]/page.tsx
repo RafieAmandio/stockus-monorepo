@@ -22,7 +22,7 @@ import { CheckCircle, XCircle } from 'lucide-react'
 export default function UserDetailPage() {
   const params = useParams()
   const router = useRouter()
-  const userId = parseInt(params.id as string)
+  const userId = params.id as string
 
   const [data, setData] = useState<UserDetail | null>(null)
   const [loading, setLoading] = useState(true)

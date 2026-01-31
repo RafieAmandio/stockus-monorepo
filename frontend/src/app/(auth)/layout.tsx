@@ -14,12 +14,10 @@ export default async function MemberLayout({
   }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen bg-[#f5f5f5]">
       <Sidebar user={user} />
-      <main className="flex-1 overflow-y-auto">
-        <div className="container py-8">
-          {children}
-        </div>
+      <main className="flex-1 overflow-y-auto p-8">
+        {children}
       </main>
     </div>
   )

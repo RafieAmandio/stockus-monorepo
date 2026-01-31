@@ -22,7 +22,7 @@ export default function TemplatesPage() {
   const router = useRouter()
   const [templates, setTemplates] = useState<Template[]>([])
   const [loading, setLoading] = useState(true)
-  const [deleteId, setDeleteId] = useState<number | null>(null)
+  const [deleteId, setDeleteId] = useState<string | null>(null)
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
@@ -41,11 +41,11 @@ export default function TemplatesPage() {
     }
   }
 
-  function handleEdit(id: number) {
+  function handleEdit(id: string) {
     router.push(`/admin/templates/${id}`)
   }
 
-  function handleDelete(id: number) {
+  function handleDelete(id: string) {
     setDeleteId(id)
   }
 

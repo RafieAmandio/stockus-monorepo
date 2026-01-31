@@ -1,4 +1,4 @@
-const PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+const PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
 /**
  * Client-side API client

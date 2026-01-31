@@ -40,7 +40,7 @@ services:
       VIDEO_UPLOAD_URL_EXPIRY: ${VIDEO_UPLOAD_URL_EXPIRY:-900}
       VIDEO_PLAYBACK_URL_EXPIRY: ${VIDEO_PLAYBACK_URL_EXPIRY:-3600}
     ports:
-      - "3001:3000"
+      - "4001:3000"
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health/ready', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
       interval: 12s
@@ -59,12 +59,18 @@ services:
     build:
       context: ./frontend
       args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:4001}
         NEXT_PUBLIC_MIDTRANS_CLIENT_KEY: ${NEXT_PUBLIC_MIDTRANS_CLIENT_KEY}
         NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION: ${MIDTRANS_IS_PRODUCTION:-false}
     environment:
-      # Runtime environment (not used for NEXT_PUBLIC_ vars, but kept for reference)
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001}
+      # Server-side API URL (internal Docker network)
+      API_URL: http://backend:3000
+
+      # Client-side API URL (browser requests)
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:4001}
+
+      # Auth (for server-side session verification)
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET required}
 
       # Server
       NODE_ENV: production
@@ -74,7 +80,7 @@ services:
       backend:
         condition: service_healthy
     ports:
-      - "${FRONTEND_PORT:-3000}:3000"
+      - "${FRONTEND_PORT:-4000}:3000"
     healthcheck:
       test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
       interval: 12s

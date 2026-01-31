@@ -54,7 +54,7 @@ export const getUser = cache(async (): Promise<User | null> => {
   const token = cookieStore.get(AUTH_COOKIE_NAME)?.value
 
   try {
-    const res = await fetch(`${process.env.API_URL || 'http://localhost:3000'}/auth/me`, {
+    const res = await fetch(`${process.env.API_URL || 'http://localhost:3001'}/auth/me`, {
       headers: {
         Cookie: `access_token=${token}`,
       },

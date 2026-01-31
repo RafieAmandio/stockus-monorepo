@@ -34,7 +34,7 @@ type TemplateFormData = z.infer<typeof templateSchema>
 export default function EditTemplatePage() {
   const router = useRouter()
   const params = useParams()
-  const templateId = parseInt(params.id as string)
+  const templateId = params.id as string
 
   const [template, setTemplate] = useState<Template | null>(null)
   const [loading, setLoading] = useState(true)

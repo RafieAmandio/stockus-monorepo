@@ -37,6 +37,7 @@ export interface ResearchReportDetail extends ResearchReport {
   stockName: string | null
   analystRating: string | null
   targetPrice: number | null
+  fileUrl: string | null
 }
 
 export interface Template {

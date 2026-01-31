@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { ResearchDetailCard } from '@/components/member/ResearchDetailCard'
 import { SITE_NAME } from '@/lib/constants'
 import type { ResearchReportDetail } from '@/types'
-import { ArrowLeft, Calendar, Lock } from 'lucide-react'
+import { ArrowLeft, Calendar, Download, Lock } from 'lucide-react'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -125,11 +125,21 @@ export default async function ResearchDetailPage({ params }: PageProps) {
 
       {/* Header */}
       <div className="space-y-4">
-        <div className="flex items-start gap-3">
-          <h1 className="text-3xl font-bold tracking-tight">{report.title}</h1>
-          <Badge variant={report.requiredTier === 'free' ? 'secondary' : 'default'}>
-            {report.requiredTier === 'free' ? 'Free' : 'Member'}
-          </Badge>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-start gap-3">
+            <h1 className="text-3xl font-bold tracking-tight">{report.title}</h1>
+            <Badge variant={report.requiredTier === 'free' ? 'secondary' : 'default'}>
+              {report.requiredTier === 'free' ? 'Free' : 'Member'}
+            </Badge>
+          </div>
+          {report.fileUrl && (
+            <Button asChild>
+              <a href={report.fileUrl} target="_blank" rel="noopener noreferrer" download>
+                <Download className="h-4 w-4 mr-2" />
+                Download PDF
+              </a>
+            </Button>
+          )}
         </div>
         <p className="text-lg text-muted-foreground">{report.summary}</p>
         {report.publishedAt && (

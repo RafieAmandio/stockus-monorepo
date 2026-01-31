@@ -1,7 +1,7 @@
 import 'server-only'
 import { cookies } from 'next/headers'
 
-const API_URL = process.env.API_URL || 'http://localhost:3000'
+const API_URL = process.env.API_URL || 'http://localhost:3001'
 
 async function adminFetch(path: string, options: RequestInit = {}) {
   const cookieStore = await cookies()

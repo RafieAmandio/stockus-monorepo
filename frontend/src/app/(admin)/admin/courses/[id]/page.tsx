@@ -39,7 +39,7 @@ type FormValues = z.infer<typeof courseSchema>
 export default function EditCoursePage() {
   const router = useRouter()
   const params = useParams()
-  const courseId = parseInt(params.id as string)
+  const courseId = params.id as string
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [loading, setLoading] = useState(true)
 

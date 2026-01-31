@@ -18,7 +18,7 @@ export const checkIsAdmin = cache(async (): Promise<boolean> => {
 
   try {
     // Try to access an admin endpoint - if it succeeds, user is admin
-    const res = await fetch(`${process.env.API_URL || 'http://localhost:3000'}/admin/metrics`, {
+    const res = await fetch(`${process.env.API_URL || 'http://localhost:3001'}/admin/metrics`, {
       headers: {
         Cookie: `access_token=${token}`,
       },

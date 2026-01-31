@@ -20,6 +20,7 @@ const createReportSchema = z.object({
   stockName: z.string().max(255).optional(),
   analystRating: z.string().max(50).optional(),
   targetPrice: z.number().int().positive().optional(),
+  fileUrl: z.string().url().max(512).optional(), // URL to downloadable file
 })
 
 const updateReportSchema = createReportSchema.partial()
@@ -131,6 +132,7 @@ research.post('/', authMiddleware, requireAdmin(), zValidator('json', createRepo
     stockName: data.stockName,
     analystRating: data.analystRating,
     targetPrice: data.targetPrice,
+    fileUrl: data.fileUrl,
   }).returning()
 
   return c.json({ report }, 201)

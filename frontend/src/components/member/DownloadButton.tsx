@@ -7,7 +7,7 @@ import { Progress } from '@/components/ui/progress'
 import { Download, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { recordDownload } from '@/lib/download-history'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
 /**
  * Extract filename from URL or Content-Disposition header

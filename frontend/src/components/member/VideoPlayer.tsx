@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 // Dynamic import to avoid SSR issues
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false }) as any
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
 interface VideoPlayerProps {
   videoUrl: string  // Expected format: "/videos/123" or just "123"

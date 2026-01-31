@@ -133,6 +133,7 @@ export interface Research {
   stockName: string | null
   analystRating: string | null // 'Buy' | 'Hold' | 'Sell'
   targetPrice: number | null
+  fileUrl: string | null // URL to downloadable file
   createdAt: string
   updatedAt: string
 }
@@ -147,6 +148,7 @@ export interface ResearchFormData {
   stockName?: string | null
   analystRating?: string | null
   targetPrice?: number | null
+  fileUrl?: string | null
 }
 
 export async function getAdminResearch() {
