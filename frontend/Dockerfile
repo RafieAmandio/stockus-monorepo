@@ -26,6 +26,10 @@ ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_MIDTRANS_CLIENT_KEY=$NEXT_PUBLIC_MIDTRANS_CLIENT_KEY
 ENV NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION=$NEXT_PUBLIC_MIDTRANS_IS_PRODUCTION
 
+# JWT_SECRET is needed at build time for page data collection (server components)
+# The actual runtime value is provided via docker-compose environment
+ENV JWT_SECRET=build-time-placeholder
+
 RUN npm run build
 
 # Stage 3 - Runner

@@ -22,7 +22,7 @@ export function WhyIndonesian() {
             </div>
             <ScrollReveal variant="slideUp" delay={0.2}>
                 <div className='2xl:container 2xl:mx-auto'>
-                    <Image src="/whyus.webp" alt="Why Us" className='w-full h-auto relative z-10 ' width={1920} height={1080} />
+                    <Image src="/whyus.png" alt="Why Us" className='w-full h-auto relative z-10 ' width={1920} height={1080} />
                 </div>
             </ScrollReveal>
         </section>

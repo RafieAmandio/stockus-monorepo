@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-main-black pt-8 sm:pt-12 sm:max-h-[900px] lg:max-h-[900px] 2xl:max-h-[990px]">
+    <section data-hero className="relative overflow-hidden bg-main-black pt-8 sm:pt-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <motion.h1
@@ -52,63 +52,68 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         className='container mx-auto px-4 sm:px-6 lg:px-8 relative'
       >
+        {/* Orange glow behind laptop */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[80%] h-[80%] rounded-full bg-[#C47A2A]/40 blur-[100px]" />
+        </div>
         <div className="relative z-10">
-          {/* Nvidia Coin - Top Left */}
+          {/* VISA Coin - Top Left */}
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-4/5 left-[3%] w-24 md:w-32 z-20"
+            className="absolute top-[5%] left-[2%] w-24 md:w-40 z-20"
           >
-            <Image src="/nvidia.webp" alt="Nvidia" width={200} height={200} className="w-full h-auto drop-shadow-2xl scale-100 md:scale-[2.3]" />
+            <Image src="/VISA.png" alt="VISA" width={200} height={200} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
           {/* Amazon Coin - Mid Left */}
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-1/4 -left-12 md:-left-18 w-20 md:w-30 z-20"
+            className="absolute top-[35%] -left-6 md:-left-10 w-18 md:w-28 z-20"
           >
-            <Image src="/amazon.webp" alt="Amazon" width={120} height={120} className="w-full h-auto drop-shadow-2xl scale-100 md:scale-[1.5]" />
+            <Image src="/Amazon.png" alt="Amazon" width={120} height={120} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
           {/* Apple Coin - Bottom Left */}
           <motion.div
             animate={{ y: [0, -25, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute top-1/2 -left-0 w-32 md:w-40 z-20"
+            className="absolute top-[58%] -left-6 md:-left-10 w-24 md:w-40 z-20"
           >
-            <Image src="/apple.webp" alt="Apple" width={180} height={180} className="w-full h-auto drop-shadow-2xl scale-100 md:scale-[1.8]" />
+            <Image src="/apple.png" alt="Apple" width={180} height={180} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
           {/* Microsoft Coin - Top Right */}
           <motion.div
             animate={{ y: [0, -18, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-4/5 right-[3%] w-24 md:w-32 z-20"
+            className="absolute top-[3%] right-[2%] w-20 md:w-32 z-20"
           >
-            <Image src="/microsoft.webp" alt="Microsoft" width={200} height={200} className="w-full h-auto drop-shadow-2xl scale-80 md:scale-[0.8]" />
+            <Image src="/microsoft.png" alt="Microsoft" width={200} height={200} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
           {/* Meta Coin - Mid Right */}
           <motion.div
             animate={{ y: [0, -22, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-            className="absolute top-1/4 -right-12 md:-right-18 w-20 md:w-30 z-20"
-            style={{ transform: "scale(1.4)" }}
+            className="absolute top-[32%] -right-6 md:-right-10 w-16 md:w-28 z-20"
           >
-            <Image src="/meta.webp" alt="Meta" width={120} height={120} className="w-full h-auto drop-shadow-2xl scale-80 md:scale-[1.4]" />
+            <Image src="/meta.png" alt="Meta" width={120} height={120} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
-          {/* Tesla Coin - Bottom Right */}
+          {/* Netflix Coin - Bottom Right */}
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            className="absolute bottom-1/3 -right-0 w-32 md:w-40 z-20"
+            className="absolute top-[58%] -right-6 md:-right-10 w-24 md:w-40 z-20"
           >
-            <Image src="/tesla.webp" alt="Tesla" width={180} height={180} className="w-full h-auto drop-shadow-2xl scale-70 md:scale-[1]" />
+            <Image src="/netflix.png" alt="Netflix" width={180} height={180} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
 
-          <Image src="/laptop.svg" alt="Hero" width={1920} height={1080} className='w-full h-auto relative z-10' />
+          <div className="relative z-10 h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] 2xl:h-[550px] overflow-hidden">
+            <Image src="/laptop.svg" alt="Hero" width={1920} height={1080} className='w-full h-auto' />
+          </div>
         </div>
       </motion.div>
     </section>
