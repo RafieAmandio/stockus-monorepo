@@ -60,7 +60,7 @@ export function CommunityFeatures() {
         </div>
 
         {/* Features Grid */}
-        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 md:gap-y-16">
+        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-12 md:gap-y-16">
           {features.map((feature, index) => (
             <StaggerItem key={index} variant="fadeUp">
               <div className="flex gap-6 items-start group transition-transform duration-300 hover:translate-x-2">
@@ -97,7 +97,7 @@ export function CommunityFeatures() {
           <div className="mt-20 md:mt-32 flex justify-center">
             <Button
               variant="outline"
-              className="w-full border-brand bg-transparent py-8 text-2xl font-montserrat font-semibold text-brand border-2 rounded-[30px] transition-all duration-300 hover:bg-brand hover:text-white hover:scale-[1.02]"
+              className="w-full border-brand bg-transparent py-5 sm:py-6 md:py-8 text-lg sm:text-xl md:text-2xl font-montserrat font-semibold text-brand border-2 rounded-[30px] transition-all duration-300 hover:bg-brand hover:text-white hover:scale-[1.02]"
               asChild
             >
               <Link href="/community">{t('communityFeatures.learnMore')}</Link>

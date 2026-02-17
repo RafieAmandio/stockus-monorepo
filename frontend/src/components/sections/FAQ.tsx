@@ -23,10 +23,10 @@ export function FAQ() {
     <section className="bg-main-white py-12 md:py-24 xl:py-32 px-4 sm:px-6 lg:px-8">
       <div className="w-full mx-auto container">
         <ScrollReveal variant="scale">
-          <div className="bg-white rounded-[40px] md:rounded-[60px] p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col lg:flex-row gap-12 lg:gap-20 xl:gap-32 items-center">
+          <div className="bg-white rounded-[20px] sm:rounded-[30px] md:rounded-[40px] lg:rounded-[60px] p-5 sm:p-8 md:p-12 lg:p-16 xl:p-24 flex flex-col lg:flex-row gap-12 lg:gap-20 xl:gap-32 items-center">
             {/* Left Column: Title */}
             <ScrollReveal variant="fadeRight" className="w-full lg:w-5/12 xl:w-5/12">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold font-montserrat text-main-black leading-[1.1]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat text-main-black leading-[1.1]">
                 <span className="text-brand">{t('faq.title1')}</span> <br />
                 {t('faq.title2')} <br />
                 {t('faq.title3')}
@@ -47,7 +47,7 @@ export function FAQ() {
                   >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full px-8 py-6 md:py-8 flex items-center justify-between text-left focus:outline-none"
+                    className="w-full px-5 sm:px-8 py-5 sm:py-6 md:py-8 flex items-center justify-between text-left focus:outline-none"
                   >
                     <span className={cn(
                       "text-lg md:text-xl font-bold font-montserrat pr-8",

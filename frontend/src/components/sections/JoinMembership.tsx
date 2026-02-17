@@ -26,7 +26,7 @@ export function JoinMembership() {
                 {/* Header */}
                 <div className="text-center mb-16 md:mb-24 space-y-4">
                     <ScrollReveal variant="fadeUp">
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold font-montserrat text-white leading-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat text-white leading-tight">
                             {t('joinMembership.title')}
                         </h2>
                     </ScrollReveal>
@@ -69,7 +69,7 @@ export function JoinMembership() {
                             </div>
 
                             <Button
-                                className="bg-brand hover:bg-[#e06300] text-white rounded-full py-6 md:py-8 px-12 md:px-16 text-xl md:text-2xl font-bold font-montserrat w-full max-w-sm shadow-xl transition-transform hover:scale-105"
+                                className="bg-brand hover:bg-[#e06300] text-white rounded-full py-4 sm:py-6 md:py-8 px-8 sm:px-12 md:px-16 text-lg sm:text-xl md:text-2xl font-bold font-montserrat w-full max-w-sm shadow-xl transition-transform hover:scale-105"
                             >
                                 {t('joinMembership.joinNow')}
                             </Button>

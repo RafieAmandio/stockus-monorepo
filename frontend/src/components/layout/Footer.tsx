@@ -26,7 +26,7 @@ export function Footer() {
     <footer className="bg-black text-white py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto container">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between gap-12 md:gap-24 mb-16 md:mb-32">
+        <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-16 lg:gap-24 mb-16 md:mb-32">
           {/* Logo & Disclaimer */}
           <ScrollReveal variant="fadeRight" className="w-full md:w-7/12 space-y-6">
             <Link href="/" className="inline-block transition-transform hover:scale-105">

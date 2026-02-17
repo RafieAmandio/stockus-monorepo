@@ -9,14 +9,14 @@ import { useTranslation } from '@/lib/i18n/LanguageContext'
 export function Hero() {
   const { t } = useTranslation()
   return (
-    <section data-hero className="relative overflow-hidden bg-main-black pt-8 sm:pt-12">
+    <section data-hero className="relative overflow-hidden bg-main-black pt-20 sm:pt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-montserrat text-2xl sm:text-5xl font-semibold leading-none text-white"
+            className="font-montserrat text-2xl md:text-4xl sm:text-5xl font-semibold leading-none text-white"
           >
             {t('hero.title')}
           </motion.h1>
@@ -24,7 +24,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mt-6 text-sm sm:text-lg text-main-white opacity-75 font-light"
+            className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base lg:text-lg text-main-white opacity-75 font-light"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -32,14 +32,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row font-montserrat font-semibold"
+            className="mt-6 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row font-montserrat font-semibold"
           >
-            <Button size="lg" variant="brand-outline" className="rounded-[15px] p-7 transition-all duration-300 hover:scale-105" asChild>
+            <Button size="lg" variant="brand-outline" className="rounded-[15px] p-5 sm:p-7 text-sm sm:text-base transition-all duration-300 hover:scale-105" asChild>
               <Link href="/courses" className='font-semibold'>
                 {t('hero.viewCurriculum')}
               </Link>
             </Button>
-            <Button size="lg" variant="brand" className="rounded-[15px] p-7 transition-all duration-300 hover:scale-105" asChild>
+            <Button size="lg" variant="brand" className="rounded-[15px] p-5 sm:p-7 text-sm sm:text-base transition-all duration-300 hover:scale-105" asChild>
               <Link href="/pricing" className='font-semibold'>
                 {t('hero.joinCohort')}
               </Link>
@@ -64,7 +64,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[5%] left-[2%] w-24 md:w-40 z-20"
+            className="absolute top-[5%] left-[2%] w-14 sm:w-24 md:w-40 z-20"
           >
             <Image src="/VISA.png" alt="VISA" width={200} height={200} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
@@ -73,7 +73,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-[35%] -left-6 md:-left-10 w-18 md:w-28 z-20"
+            className="absolute top-[35%] left-0 lg:-left-10 w-18 md:w-28 z-20 hidden sm:block"
           >
             <Image src="/Amazon.png" alt="Amazon" width={120} height={120} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
@@ -82,7 +82,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -25, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute top-[58%] -left-6 md:-left-10 w-24 md:w-40 z-20"
+            className="absolute top-[58%] left-0 lg:-left-10 w-14 sm:w-24 md:w-40 z-20"
           >
             <Image src="/apple.png" alt="Apple" width={180} height={180} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
@@ -91,7 +91,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -18, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute top-[3%] right-[2%] w-20 md:w-32 z-20"
+            className="absolute top-[3%] right-[2%] w-12 sm:w-20 md:w-32 z-20"
           >
             <Image src="/microsoft.png" alt="Microsoft" width={200} height={200} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
@@ -100,7 +100,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -22, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-            className="absolute top-[32%] -right-6 md:-right-10 w-16 md:w-28 z-20"
+            className="absolute top-[32%] right-0 lg:-right-10 w-16 md:w-28 z-20 hidden sm:block"
           >
             <Image src="/meta.png" alt="Meta" width={120} height={120} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>
@@ -109,7 +109,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            className="absolute top-[58%] -right-6 md:-right-10 w-24 md:w-40 z-20"
+            className="absolute top-[58%] right-0 lg:-right-10 w-14 sm:w-24 md:w-40 z-20"
           >
             <Image src="/netflix.png" alt="Netflix" width={180} height={180} className="w-full h-auto drop-shadow-2xl" />
           </motion.div>

@@ -31,7 +31,7 @@ function DayCard({ day, title, desc, isActive, onClick }: {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className={cn(
-                "flex-shrink-0 w-[300px] md:w-[400px] min-h-[450px] rounded-[20px] p-8 cursor-pointer flex flex-col ",
+                "flex-shrink-0 w-[260px] sm:w-[300px] md:w-[400px] min-h-[400px] md:min-h-[450px] rounded-[20px] p-8 cursor-pointer flex flex-col ",
                 isActive ? "" : "backdrop-blur-sm"
             )}
         >
@@ -108,7 +108,7 @@ export function Fundamentals() {
 
                         {/* Description Side */}
                         <ScrollReveal variant="fadeLeft" delay={0.2} className="w-full">
-                            <p className="text-white text-lg md:text-xl font-light leading-relaxed  font-montserrat max-w-lg leading-[1px]">
+                            <p className="text-white text-lg md:text-xl font-light font-montserrat max-w-lg leading-relaxed">
                                 {t('fundamentals.subtitle')}
                             </p>
                         </ScrollReveal>

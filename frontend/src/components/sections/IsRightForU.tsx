@@ -28,7 +28,7 @@ export function IsRightForU() {
     return (
         <section className="bg-custom-secondary py-12 px-4 sm:px-6">
             <ScrollReveal variant="scale">
-                <div className="max-w-6xl mx-auto bg-white rounded-[20px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center">
+                <div className="max-w-6xl mx-auto bg-white rounded-[20px] p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-12 items-center">
                     {/* Left Content */}
                     <div className="w-full md:w-1/2 space-y-6">
                         <ScrollReveal variant="fadeUp" delay={0.1}>
@@ -42,7 +42,7 @@ export function IsRightForU() {
                         </ScrollReveal>
 
                         <ScrollReveal variant="fadeUp" delay={0.2}>
-                            <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-main-black leading-tight">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-main-black leading-tight">
                                 {t('isRightForU.title.is')} <span className="text-brand">{t('isRightForU.title.stockus')}</span> {t('isRightForU.title.rightFor')} <span className="text-brand">{t('isRightForU.title.you')}</span>
                             </h2>
                         </ScrollReveal>

@@ -136,10 +136,7 @@ export function WhyIndonesian() {
             content: (
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
                     <div className="w-full lg:w-1/2 space-y-5">
-                        <div className="inline-block px-3 py-1 bg-brand/10 rounded-full">
-                            <span className="text-xs font-montserrat font-semibold text-brand uppercase tracking-wider">{t('wyg.preipo.forMembers')}</span>
-                        </div>
-                        <h3 className="text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
                             {t('wyg.preipo.title')} <span className="text-brand">{t('wyg.preipo.subtitle')}</span>
                         </h3>
                         <div className="space-y-4 text-slate-500 font-montserrat text-[15px] leading-relaxed">
@@ -170,7 +167,7 @@ export function WhyIndonesian() {
             content: (
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
                     <div className="w-full lg:w-1/2 space-y-5">
-                        <h3 className="text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
                             {t('wyg.university.title')}
                         </h3>
                         <div className="bg-slate-50/80 rounded-2xl border border-slate-100 p-6 flex items-center justify-center">
@@ -213,7 +210,7 @@ export function WhyIndonesian() {
             content: (
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
                     <div className="w-full lg:w-1/2 space-y-5">
-                        <h3 className="text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
                             {t('wyg.info.title')}
                         </h3>
                         <p className="text-slate-500 font-montserrat text-[15px] leading-relaxed">
@@ -252,7 +249,7 @@ export function WhyIndonesian() {
             content: (
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
                     <div className="w-full lg:w-1/2 space-y-5">
-                        <h3 className="text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-montserrat text-main-black leading-[1.1]">
                             {t('wyg.keynote.title')}
                         </h3>
                         <ul className="space-y-3">
@@ -328,13 +325,13 @@ export function WhyIndonesian() {
 
                         {/* Tabs */}
                         <div className="border-b border-slate-200 px-4 md:px-8 relative z-10">
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 text-xs sm:text-sm md:text-base">
                                 {tabs.map((tab, index) => (
                                     <button
                                         key={index}
                                         onClick={() => setActiveTab(index)}
                                         className={cn(
-                                            "px-4 py-5 md:py-6 text-sm md:text-base font-montserrat font-semibold text-center transition-all duration-300 relative",
+                                            "px-4 py-3 sm:py-5 md:py-6 font-montserrat font-semibold text-center transition-all duration-300 relative",
                                             activeTab === index
                                                 ? "text-brand"
                                                 : "text-slate-400 hover:text-slate-600"
@@ -354,7 +351,7 @@ export function WhyIndonesian() {
                         </div>
 
                         {/* Tab Content */}
-                        <div className="relative z-10 min-h-[700px] md:min-h-[520px]">
+                        <div className="relative z-10 min-h-[480px] md:min-h-[520px]">
                             <AnimatePresence initial={false}>
                                 <motion.div
                                     key={activeTab}
@@ -362,7 +359,7 @@ export function WhyIndonesian() {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                     transition={{ duration: 0.25 }}
-                                    className="absolute inset-0 p-8 md:p-12 lg:p-16"
+                                    className="absolute inset-0 p-5 sm:p-8 md:p-12 lg:p-16"
                                 >
                                     {active.content}
                                 </motion.div>

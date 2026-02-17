@@ -100,7 +100,7 @@ const trackPages = [pages[pages.length - 1], ...pages, pages[0]]
 
 function PageSlide({ pageStocks, prefix }: { pageStocks: typeof stocks; prefix: string }) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full flex-shrink-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full flex-shrink-0">
             {pageStocks.map((stock) => (
                 <StockCard key={`${prefix}-${stock.ticker}`} stock={stock} />
             ))}
@@ -113,6 +113,7 @@ export function StockPerformance() {
     // trackIndex: 0 = clone-last, 1 = page0, 2 = page1, 3 = clone-first
     const [trackIndex, setTrackIndex] = useState(1)
     const [isTransitioning, setIsTransitioning] = useState(true)
+    const [isAnimating, setIsAnimating] = useState(false)
     const trackRef = useRef<HTMLDivElement>(null)
 
     const realPage = ((trackIndex - 1) % totalPages + totalPages) % totalPages
@@ -122,21 +123,36 @@ export function StockPerformance() {
         if (trackIndex === 0) {
             setIsTransitioning(false)
             setTrackIndex(totalPages) // snap to last real page
-            // Force reflow then re-enable transitions
             requestAnimationFrame(() => {
-                requestAnimationFrame(() => setIsTransitioning(true))
+                requestAnimationFrame(() => {
+                    setIsTransitioning(true)
+                    setIsAnimating(false)
+                })
             })
         } else if (trackIndex === totalPages + 1) {
             setIsTransitioning(false)
             setTrackIndex(1) // snap to first real page
             requestAnimationFrame(() => {
-                requestAnimationFrame(() => setIsTransitioning(true))
+                requestAnimationFrame(() => {
+                    setIsTransitioning(true)
+                    setIsAnimating(false)
+                })
             })
+        } else {
+            setIsAnimating(false)
         }
     }, [trackIndex])
 
-    const next = () => setTrackIndex((i) => i + 1)
-    const prev = () => setTrackIndex((i) => i - 1)
+    const next = () => {
+        if (isAnimating) return
+        setIsAnimating(true)
+        setTrackIndex((i) => i + 1)
+    }
+    const prev = () => {
+        if (isAnimating) return
+        setIsAnimating(true)
+        setTrackIndex((i) => i - 1)
+    }
 
     const goToPage = (pageIdx: number) => {
         setTrackIndex(pageIdx + 1)
@@ -162,16 +178,16 @@ export function StockPerformance() {
                 {/* Cards Carousel */}
                 <ScrollReveal variant="fadeUp" delay={0.2}>
                     <div className="relative max-w-6xl mx-auto">
-                        {/* Nav Buttons */}
+                        {/* Nav Buttons - hidden on mobile where cards stack, shown on lg+ where 3-col layout is used */}
                         <button
                             onClick={prev}
-                            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-main-black flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform"
+                            className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white text-main-black items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform"
                         >
                             <ChevronLeft className="w-5 h-5" />
                         </button>
                         <button
                             onClick={next}
-                            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-main-black flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform"
+                            className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white text-main-black items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform"
                         >
                             <ChevronRight className="w-5 h-5" />
                         </button>
@@ -190,8 +206,14 @@ export function StockPerformance() {
                             </div>
                         </div>
 
-                        {/* Dots indicator */}
-                        <div className="flex items-center justify-center gap-2 mt-8">
+                        {/* Dots indicator + mobile nav */}
+                        <div className="flex items-center justify-center gap-3 lg:gap-2 mt-8">
+                            <button
+                                onClick={prev}
+                                className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center active:scale-95 transition-transform"
+                            >
+                                <ChevronLeft className="w-4 h-4" />
+                            </button>
                             {pages.map((_, index) => (
                                 <button
                                     key={index}
@@ -201,6 +223,12 @@ export function StockPerformance() {
                                     }`}
                                 />
                             ))}
+                            <button
+                                onClick={next}
+                                className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center active:scale-95 transition-transform"
+                            >
+                                <ChevronRight className="w-4 h-4" />
+                            </button>
                         </div>
                     </div>
                 </ScrollReveal>
