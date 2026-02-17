@@ -18,7 +18,17 @@ const stocks = [
 const VISIBLE_DESKTOP = 3
 const totalPages = Math.ceil(stocks.length / VISIBLE_DESKTOP)
 
+const chartPaths: Record<string, string> = {
+    'V':     'M0,45 Q25,44 50,40 T100,32 T140,28 T170,20 T200,12',
+    'FWONK': 'M0,52 Q30,50 55,48 T90,38 T120,22 T155,18 T200,8',
+    'ADYEN': 'M0,48 Q20,46 45,42 T80,44 T110,30 T150,24 T200,10',
+    'MSFT':  'M0,50 Q35,48 60,44 T95,36 T125,32 T160,18 T200,6',
+    'NFLX':  'M0,55 Q25,52 40,50 T75,48 T110,35 T145,20 T200,10',
+    'BRK.B': 'M0,52 Q20,50 50,46 T85,40 T115,34 T150,22 T200,5',
+}
+
 function MiniChart({ id }: { id: string }) {
+    const d = chartPaths[id] || 'M0,50 Q20,48 35,42 T70,35 T100,25 T130,28 T160,15 T200,8'
     return (
         <svg viewBox="0 0 200 60" className="w-full h-full" preserveAspectRatio="none">
             <defs>
@@ -28,13 +38,13 @@ function MiniChart({ id }: { id: string }) {
                 </linearGradient>
             </defs>
             <path
-                d="M0,50 Q20,48 35,42 T70,35 T100,25 T130,28 T160,15 T200,8"
+                d={d}
                 fill="none"
                 stroke="#22c55e"
                 strokeWidth="2"
             />
             <path
-                d="M0,50 Q20,48 35,42 T70,35 T100,25 T130,28 T160,15 T200,8 V60 H0 Z"
+                d={`${d} V60 H0 Z`}
                 fill={`url(#chartGradient-${id})`}
             />
         </svg>
