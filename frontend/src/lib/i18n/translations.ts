@@ -5,18 +5,27 @@ const translations: Record<Locale, Record<string, string>> = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'About us',
-    'nav.research': 'Research',
+    'nav.discover': 'Discover',
     'nav.community': 'Community',
     'nav.membership': 'Membership',
     'nav.login': 'Login',
     'nav.signup': 'Sign Up',
 
     // Hero
-    'hero.title': 'The Bridge Between Indonesian Investors And Global Stock Markets',
+    'hero.title': 'Built Experience With Leading Firms & Institutions',
     'hero.subtitle': 'Learn how professionals analyse businesses, value companies, and build portfolios from a team that has helped manage more than $12 billion across global markets.',
     'hero.viewCurriculum': 'View Curriculum',
     'hero.joinCohort': 'Join the Next Cohort',
     'hero.proofLabel': 'Our actual portfolio performance',
+    'proof.title': 'We Don\'t Just Teach — We Invest',
+    'proof.subtitle': 'Our team actively manages real capital across global markets. This is what skin in the game looks like.',
+    'proof.stat1Label': 'Track Record',
+    'proof.stat1Value': '10+ Years',
+    'proof.stat2Label': 'Markets Covered',
+    'proof.stat2Value': 'Global Equities',
+    'proof.stat3Label': 'Approach',
+    'proof.stat3Value': 'Long-Term Value',
+    'proof.disclaimer': 'Past performance is not indicative of future results. This is shown for educational purposes only and does not constitute financial advice.',
 
     // Trusted By
     'trustedBy.title': 'Trusted by Stock Company & Popular Universities',
@@ -349,18 +358,27 @@ const translations: Record<Locale, Record<string, string>> = {
     // Nav
     'nav.home': 'Beranda',
     'nav.about': 'Tentang Kami',
-    'nav.research': 'Riset',
+    'nav.discover': 'Temukan',
     'nav.community': 'Komunitas',
     'nav.membership': 'Keanggotaan',
     'nav.login': 'Masuk',
     'nav.signup': 'Daftar',
 
     // Hero
-    'hero.title': 'Jembatan Antara Investor Indonesia Dan Pasar Saham Global',
+    'hero.title': 'Pengalaman Dibangun Bersama Firma & Institusi Terkemuka',
     'hero.subtitle': 'Pelajari cara profesional menganalisis bisnis, menilai perusahaan, dan membangun portofolio dari tim yang telah membantu mengelola lebih dari $12 miliar di pasar global.',
     'hero.viewCurriculum': 'Lihat Kurikulum',
     'hero.joinCohort': 'Gabung Kohort Berikutnya',
     'hero.proofLabel': 'Performa portofolio kami yang sebenarnya',
+    'proof.title': 'Kami Tidak Hanya Mengajar — Kami Berinvestasi',
+    'proof.subtitle': 'Tim kami secara aktif mengelola modal nyata di pasar global. Inilah bukti komitmen kami.',
+    'proof.stat1Label': 'Rekam Jejak',
+    'proof.stat1Value': '10+ Tahun',
+    'proof.stat2Label': 'Pasar yang Dicakup',
+    'proof.stat2Value': 'Ekuitas Global',
+    'proof.stat3Label': 'Pendekatan',
+    'proof.stat3Value': 'Nilai Jangka Panjang',
+    'proof.disclaimer': 'Kinerja masa lalu tidak menjamin hasil di masa depan. Ditampilkan hanya untuk tujuan edukasi dan bukan merupakan saran keuangan.',
 
     // Trusted By
     'trustedBy.title': 'Dipercaya oleh Perusahaan Sekuritas & Universitas Ternama',

@@ -220,7 +220,7 @@ export function WhyIndonesian() {
                     <div className="w-full lg:w-1/2 flex items-center justify-center">
                         <div className="flex flex-col gap-6 w-full">
                             {[
-                                { src: '/logos/alphasense.svg', name: 'AlphaSense', desc: 'AI-powered market intelligence' },
+                                { src: '/logos/alpha_sense.jpg', name: 'AlphaSense', desc: 'AI-powered market intelligence' },
                                 { src: '/logos/factset.svg', name: 'FactSet', desc: 'Financial data & analytics' },
                             ].map((tool, idx) => (
                                 <motion.div

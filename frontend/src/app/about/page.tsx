@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/scroll-reveal'
+import { ScrollReveal } from '@/components/ui/scroll-reveal'
 import { motion } from 'framer-motion'
 import { useTranslation } from '@/lib/i18n/LanguageContext'
 
@@ -24,40 +24,6 @@ Coupled with university level teaching experience, Yosua brings a combination of
   },
 ]
 
-const visionPillars: { number: string; title: string; points: { text: string; highlight?: string; after?: string }[] }[] = [
-  {
-    number: '01',
-    title: 'Democratise institutional investing',
-    points: [
-      { text: 'Deliver rigorous, practical and ', highlight: 'institutional grade investment education', after: ' to retail Indonesian investors.' },
-      { text: 'Teach a latticework of applicable models including fundamentals, valuation, portfolio management such that any investor has the right tools to succeed.' },
-    ],
-  },
-  {
-    number: '02',
-    title: 'Build a world class education platform',
-    points: [
-      { text: 'Create a modern, practical, institutional grade research platform for ', highlight: 'global equities.' },
-      { text: 'Provide unique industry and bottom-up insight, not price targets and maintenance research.' },
-    ],
-  },
-  {
-    number: '03',
-    title: 'Create a highly engaged community',
-    points: [
-      { text: 'Foster a group of ', highlight: 'diverse and high calibre investors', after: ' to share ideas and welcome new members.' },
-      { text: 'Host regular in-person events that provide massive value to attendees via networks and ideas.' },
-    ],
-  },
-  {
-    number: '04',
-    title: 'Grow wealth alongside the community',
-    points: [
-      { text: 'Build a strong following of like-minded investors that are interested in ', highlight: 'investing alongside us.' },
-      { text: 'Eventually, offer investment partnership into a vehicle that generates strong returns for all.' },
-    ],
-  },
-]
 
 export default function AboutPage() {
   const { t } = useTranslation()
@@ -87,50 +53,6 @@ export default function AboutPage() {
               {t('about.heroDescription')}
             </p>
           </ScrollReveal>
-        </div>
-      </div>
-
-      {/* Our Vision Section */}
-      <div className="bg-custom-secondary py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <ScrollReveal variant="fadeUp">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-brand leading-none mb-14 md:mb-20">
-              Our<br />Vision
-            </h2>
-          </ScrollReveal>
-
-          <div className="border-t border-slate-300" />
-
-          <StaggerContainer staggerDelay={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-10 md:pt-14">
-            {visionPillars.map((pillar, i) => (
-              <StaggerItem key={i} variant="fadeUp">
-                <div>
-                  {/* Number badge */}
-                  <div className="w-11 h-11 rounded-xl bg-brand/80 flex items-center justify-center mb-5">
-                    <span className="text-white text-sm font-bold">{pillar.number}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-main-black mb-4 leading-snug">
-                    {pillar.title}
-                  </h3>
-
-                  {/* Points */}
-                  <div className="space-y-4">
-                    {pillar.points.map((point, j) => (
-                      <p key={j} className="text-sm text-slate-600 leading-relaxed">
-                        {point.text}
-                        {point.highlight && (
-                          <span className="text-brand font-semibold">{point.highlight}</span>
-                        )}
-                        {point.after || ''}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </div>
 

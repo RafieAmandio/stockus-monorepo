@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, Globe, User } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -12,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { NAV_LINKS, SITE_NAME } from '@/lib/constants'
+import { NAV_LINKS } from '@/lib/constants'
 import { useTranslation } from '@/lib/i18n/LanguageContext'
 import type { Locale } from '@/lib/i18n/translations'
 
@@ -29,11 +30,18 @@ export function MobileNav({ scrolled = true, user }: { scrolled?: boolean; user?
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+      <SheetContent side="right" className="w-[300px] sm:w-[400px] px-8">
         <SheetHeader>
-          <SheetTitle>{SITE_NAME}</SheetTitle>
+          <SheetTitle>
+            <Image
+              src="/stockus_black.png"
+              alt="StockUs Logo"
+              width={100}
+              height={40}
+            />
+          </SheetTitle>
         </SheetHeader>
-        <nav className="mt-8 flex flex-col gap-4">
+        <nav className="mt-8 flex flex-col gap-6">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href ||
               (link.href !== '/' && pathname.startsWith(link.href))
