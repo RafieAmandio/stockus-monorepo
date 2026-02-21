@@ -56,7 +56,7 @@ export function ProofPerformance() {
             <div className="absolute -inset-1 bg-gradient-to-r from-brand/20 via-brand/10 to-brand/20 rounded-2xl blur-xl" />
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm p-2 sm:p-3">
               <Image
-                src="/proof.jpeg"
+                src="/proof.png"
                 alt="Real portfolio performance"
                 width={1200}
                 height={300}
